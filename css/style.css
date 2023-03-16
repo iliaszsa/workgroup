@@ -1,0 +1,1649 @@
+
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css");
+@import url("bootstrap.min.css");
+@import url("bootstrap-grid.css");
+@import url("style-traits.css");
+@import url("style-tables.css");
+@import url("fontawesome-free/css/all.css");
+@import url("fontawesome621web/css/all.css");
+@import url("style-menus.css");
+@import url("styles-mobiles.css");
+@import url("../ateliers/css/autres-styles.css");
+
+
+
+body {
+
+  font-size: 15px;
+  font-family: Roboto, sans-serif;
+  color: var(--color-text);
+  scrollbar-width: none;
+    
+}
+
+a {
+  color: #1977cc;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+a:hover,
+a:active, a:focus {
+  color: #f14766;
+  font-weight: 600;
+  outline: none;
+  text-decoration: none;
+}
+
+p {
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Roboto, "Open sans", Helvetica, Arial;
+  font-weight: 400;
+  margin: 0 0 20px 0;
+  padding: 0;
+  color: #0e1b4d;
+}
+
+
+#header {
+  height: 80px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  border-bottom: 10px solid var(--color-bg-br);
+  transition: all 0.5s ease-in;
+  z-index: 1024;
+  font-family: Roboto, sans-serif;
+  padding-bottom: 7px;
+  color: --color-text;
+  background: rgba(112, 220, 205, 0.98);
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+#header.header-scrolled, #header.header-inner {
+  background: rgba(6, 12, 34, 0.98);  
+  height: 60px;
+}
+
+#header #div-logo {
+  height: 50px;
+  margin: 10px 10px 0 -10px;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px;
+
+}
+
+#header #div-logo h1 {
+  font-size: 22px;
+  margin: -10px -10px;
+  padding: 10px 0;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  max-width: 200px;
+  height: 50px;
+  max-height: 50px;
+}
+
+#header #div-logo h1 span {
+  color: #1977cc;
+}
+
+#header #div-logo h1 a, header #div-logo h1 a:hover {
+  color: #fff;
+}
+
+#header #div-logo a {
+  padding: 0;
+  margin: -10px -8px;
+  max-height: 48px;
+  font-size: 22px;
+}
+#header #div-logo img {
+  padding: 0;
+  margin: -14px auto;
+  height: 48px;
+  max-height: 50px;
+}
+
+
+
+.button-header {
+
+  margin-left: 25px;
+  color: #fff;
+  background: #1977cc;
+  padding: 8px 10px;
+  margin: 0 0 0 15px;
+  border-radius: 50px;
+  border: 2px solid #1977cc;
+  transition: all ease-in-out 0.3s;
+  font-weight: 500;
+  line-height: 1;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.button-header:hover {
+  background: none;
+  color: #fff;
+}
+
+.button-header:focus {
+  color: #fff;
+}
+
+.button-header i {
+
+  font-size: 22px;
+  color: #fff;
+  line-height: 0;
+}
+
+@media (max-width: 992px) {
+  .button-header {
+    margin: 0 15px 0 0;
+  }
+}
+
+
+
+.back_cover {
+
+  top: 74px;
+  right: 0;
+  left: 0;
+  height: 92vh;
+  /*background-image: url("../images/bakground.jpg");*/
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 30px 15px;
+
+}
+
+.back_cover .exercice {
+
+  width: var(--wid-95);
+  background-color: aquamarine;
+  padding: 10px 15px;
+  margin: -17px auto 0;
+
+  cursor: pointer;
+  box-shadow: 0 8px 6px -6px black;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 18px;
+  font-weight: 700;
+
+}
+
+.back_cover .cover_content {
+
+  height: var(--hgt-95);
+  padding: 20px 30px;
+  margin: 7px auto 10px;
+  color: var(--color-text);
+  background-color: rgba(6, 5, 5, 0.3);
+  box-shadow: 0 8px 6px -6px black;
+}
+
+.cover_content .lecontenant {
+
+  position: relative;
+  min-height: 300px;
+  max-height: var(--c-hg-95);
+  overflow: hidden;
+  margin: -18px -28px;
+  padding: 10px 7px;
+}
+
+.cover_content .lecontenant:hover { overflow-y: auto; }
+
+
+
+
+/* STYLES SUR UN FORMULAIRE DE TRAVAIL */
+
+.lecontenant .formulaire,
+.formulaire {
+
+  min-height: 95px;
+  max-height: auto;
+  background-color: #abedd3;
+  padding: 10px 15px;
+  margin: 10px auto 15px;
+  box-shadow: 0 8px 6px -6px black;
+  overflow: hidden;
+  font-size: 15px;
+  font-weight: 400;
+
+  -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+}
+
+
+.formulaire .form-row, 
+.form-row {
+  padding: 7px 0;
+  margin: 7px auto;
+}
+
+.formulaire .form-row:before,
+.formulaire .form-row:after { display: table; content: ""; line-height: 0; } 
+.formulaire .form-row:after{ clear: both; }
+
+/* @form columns 
+----------------------------------- */
+.formulaire .form-row .colm { 
+	min-height: 1px; 
+	padding-left: 10px; 
+	padding-right: 10px; 
+	position: relative; 
+	float: left;
+}
+
+.formulaire .form-row .colm1{width:8.33%;}
+.formulaire .form-row .colm2{width:16.66%;}
+.formulaire .form-row .colm3{width:25%;}
+.formulaire .form-row .colm4{width:33.33%;}
+.formulaire .form-row .colm5{width:41.66%;}
+.formulaire .form-row .colm6{width:50%;}
+.formulaire .form-row .colm7{width:58.33%;}
+.formulaire .form-row .colm8{width:66.66%;}
+.formulaire .form-row .colm9{width:75%;}
+.formulaire .form-row .colm10{width:83.33%;}
+.formulaire .form-row .colm11{width:91.66%;}
+.formulaire .form-row .colm12{width:100%; }
+.formulaire .form-row .colm1-5{width:20%;}
+.formulaire .form-row .colm1-8{width:12.5%;}
+
+/* @element alignment
+-------------------------------------------------- */
+.formulaire .align-right{ text-align:right; }
+.formulaire .align-center{ text-align:center; }
+
+
+.formulaire .flop-libele {
+  font-style: normal;
+  position: absolute;
+  padding: 0 10px;
+  z-index: 16;
+  top: 8px;
+  left: 11px;
+  color: #34495E;
+  width: max-content;
+  background-color: transparent;
+  transition: all .3s ease-in-out;
+  opacity: 0;
+  cursor: text;
+
+}
+
+.formulaire .flop-libele::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  background-color: black;
+  /* height: 2px; */
+  top: 50%;
+  left: 0;
+}
+
+.flop-error {
+  font-weight: 500;
+  padding-left: 10px;
+  transition: all .3s ease-in-out;
+  opacity: 0;
+  color:#ec0909;
+}
+
+.flop-success {
+  font-weight: 500;
+  padding-left: 10px;
+  transition: all .3s ease-in-out;
+  opacity: 0;
+  color:#0aaa3d;
+}
+
+
+/* @universal rules for all elements 
+---------------------------------------------------- */
+.formulaire .flo-radio,
+.formulaire .flo-button,
+.formulaire .flo-tooltip,
+.formulaire .flo-checkbox,  
+.formulaire .flo-input,
+.formulaire .flo-notification,
+.formulaire .flo-textarea,
+.formulaire .flo-select > select,
+.formulaire .flo-selectmulti select,
+.formulaire input[type="search"]{ 
+	-webkit-transition:all 0.5s ease-in-out;
+	-moz-transition:all 0.5s ease-in-out;
+	-ms-transition:all 0.5s ease-in-out;
+	-o-transition:all 0.5s ease-in-out;
+	transition:all 0.5s ease-in-out;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	outline:none;
+}
+
+.formulaire .flo-select > select{
+	-webkit-transition:none;
+	-moz-transition:none;
+	-ms-transition:none;
+	-o-transition:none;
+	transition:none;
+}
+
+/* @control border-size :: color etc for these elements 
+----------------------------------------------------------- */
+.formulaire .flo-input,
+.formulaire .flo-select,
+.formulaire .flo-textarea,
+.formulaire .flo-select > select,
+.formulaire .flo-selectmulti select {
+	background: #fff;
+	position: relative;
+	vertical-align: top;
+	border: 2px solid #BDC3C7;
+	display: -moz-inline-stack;
+  display: inline-block;
+  *display: inline;
+	color: #34495E;
+	outline:none;
+	height: 37px;
+	width: 100%;
+	*zoom: 1;
+}
+
+/* @styling inputs and textareas 
+------------------------------------------- */
+.formulaire .flo-input, 
+.formulaire .flo-textarea { padding: 10px;}
+.formulaire .flo-textarea {    
+  resize: none;
+	line-height: 19px;
+	overflow: auto;
+	max-width:100%;
+  height: 96px;
+}
+
+/* @hint below textareas 
+---------------------------------------- */
+.formulaire .flo-hint {
+    padding: 10px;
+	display: block;
+	margin-top: -4px;
+	line-height: 16px;
+	position: relative;    
+	background: #F2F4FA;
+    border: 2px solid #bdc3c7;
+	border-top:1px solid #bdc3c7;
+	font-family:Arial, Helvetica, sans-serif;
+    -webkit-border-radius: 0 0 3px 3px;
+	-moz-border-radius: 0 0 3px 3px;
+	-o-border-radius: 0 0 3px 3px;
+	border-radius: 0 0 3px 3px;
+    font-size: 11px;
+    color: #777;
+}
+
+
+.formulaire .flo-hint .btn-save-texte,
+.flo-hint .btn-save-texte,
+.btn-save-texte {
+
+  background: #1977cc;
+  color: #fff;  
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  display: inline-block;
+  padding: 4px 15px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin-top: auto 10px;
+  border: 1px solid #bdc3c7;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 8px 6px -6px black;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: max-content;
+
+}
+
+
+.formulaire .flo-hint .btn-save-texte:hover,
+.flo-hint .btn-save-texte:hover,
+.btn-save-texte:hover {
+  color: #fff;
+  background: rgba(6, 12, 34, 0.98);
+  border: 2px solid #1977cc;
+  text-shadow: 0 0 5px rgb(255, 255, 255), 
+            0 0 10px rgb(255, 255, 255), 
+            0 0 15px rgb(255, 255, 255), 
+            0 0 20px rgb(255, 17, 119), 
+            0 0 35px rgb(255, 17, 119), 
+            0 0 40px rgb(255, 17, 119), 
+            0 0 50px rgb(255, 17, 119), 
+            0 0 75px rgb(255, 17, 119);
+}
+
+
+
+
+
+/* @form selects :: dropdowns 
+-------------------------------------------------- */
+.formulaire .flo-select { border:0; z-index:10; }
+.formulaire .flo-select > select {
+	display: block;
+  padding: 5px 10px; 
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
+	outline:none;
+	text-indent: 0.01px;
+  text-overflow: ''; 
+	z-index:10;
+	margin: 0;	
+}
+
+.formulaire .flo-select > select::-ms-expand { display: none; }
+.formulaire .flo-select:before, 
+.formulaire .flo-select:after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+	z-index: 15;
+}
+
+.formulaire .flo-select:before { 
+	top: 2px;
+	right: 2px;
+	width: 34px;
+	bottom: 2px;
+	background: #F2F4FA;
+	border-left:1px solid #d3dae7;
+	-webkit-border-radius: 0 1px 1px 0;
+	-moz-border-radius: 0 1px 1px 0;
+	-o-border-radius: 0 1px 1px 0;
+	border-radius: 0 1px 1px 0;
+}
+
+.formulaire .flo-select .arrow {
+	position: absolute;
+	top: 7px;
+	right: 6px;
+	width: 24px;
+	height: 24px;
+	background:#F2F4FA;
+	color:#B5C1C7;
+	pointer-events:none;
+	z-index:16;
+
+}
+
+.formulaire .flo-select .arrow:after,
+.formulaire .flo-select .arrow:before {
+	content: '';
+	position: absolute;
+	font:12px "Consolas", monospace;
+	font-style:normal;
+	pointer-events:none;
+	left:6px;
+}
+
+.formulaire .flo-select .arrow:before { content:'\25BC'; bottom:4px; }
+.formulaire .flo-select .double:after { content:'\25B2'; top:-1px;  }
+.formulaire .flo-select .double:before { content:'\25BC'; bottom:-1px; }
+.formulaire .flo-selectmulti select { 
+	width:100%; 
+	height: 123px;
+	padding: 10px;
+}
+
+/* @file inputs :: file uploaders 
+-------------------------------------------------------- */
+.formulaire .flo-file{ display:block; width:100%; }
+.formulaire .flo-file .file-input{
+	width:100%;
+	height:100%;
+	cursor:pointer;
+	padding:8px 10px;
+	position:absolute;
+	-moz-opacity:0;
+	opacity: 0;
+	z-index:11;
+	bottom:0;	
+	right:0;
+}
+
+.formulaire .flo-file .flo-button {
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	float: none;
+	height: 34px;
+	line-height: 34px;
+	padding: 0 16px;
+	z-index: 10;
+}
+
+.formulaire .button-input,
+.formulaire .colm .button-input,
+.colm .button-input {
+	position: absolute;
+	top: 3px;
+	right: 2px;
+	float: none;
+	height: 35px;
+	line-height: 35px;
+	padding: 0 10px;
+	z-index: 10;
+}
+
+
+.formulaire .button-input,
+.formulaire .colm .button-input,
+.colm .button-input {
+
+  background: #909192;
+  color: #fff;  
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  right: -120px;
+  font-size: 18px;
+  padding: 0 7px;
+  transition: all 0.5s ease-in;
+  margin-top: auto;
+  margin-right: auto;
+  border: none;
+  cursor: pointer;
+  height: 31px;
+  line-height: 31px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: max-content;
+  opacity: 0;
+
+}
+
+.formulaire .flo-input:focus ~ .button-input,
+.formulaire .flo-textarea:focus ~ .button-input,
+.formulaire .flo-select > select:focus ~ .button-input,
+.formulaire .flo-selectmulti select:focus ~ .button-input { 
+  top: 12px;
+  right: 12px;
+  height: 35px;
+  line-height: 35px;
+  padding: 0 10px;
+  background: #1977cc;
+  opacity: 1;
+  /* box-shadow: 0 8px 6px -6px black; */
+}
+
+.formulaire .flo-input:focus ~ .button-input:hover,
+.formulaire .flo-textarea:focus ~ .button-input:hover,
+.formulaire .flo-select > select:focus ~ .button-input:hover,
+.formulaire .flo-selectmulti select:focus ~ .button-input:hover {
+  color: #fff;
+  background: rgba(6, 12, 34, 0.98);
+  text-shadow: 0 0 5px rgb(255, 255, 255), 
+            0 0 10px rgb(255, 255, 255), 
+            0 0 15px rgb(255, 255, 255), 
+            0 0 20px rgb(255, 17, 119), 
+            0 0 35px rgb(255, 17, 119), 
+            0 0 40px rgb(255, 17, 119), 
+            0 0 50px rgb(255, 17, 119), 
+            0 0 75px rgb(255, 17, 119);
+}
+
+
+
+/* @radio + checkbox option elements 
+----------------------------------------------------- */
+.formulaire .flo-option {
+  position: relative;	
+	padding-right: 15px;    
+	display: inline-block;
+  vertical-align: middle;
+  padding: 4px 7px;
+  width: 100%;
+}
+
+.formulaire .flo-option > input {
+  position: absolute;
+  height: inherit;
+  width: inherit;
+	clip: rect(1px 1px 1px 1px); 
+	clip: rect(1px, 1px, 1px, 1px);
+	overflow: hidden;	
+  opacity: 0;
+	left: 0;
+
+}
+
+
+.flo-option > i.i-spec {
+
+  float: right;
+  right: 10px;
+  z-index: 10;
+  align-self: baseline;
+  margin: 12px 10px;
+  cursor: pointer;
+
+}
+
+
+.formulaire .flo-checkbox, 
+.formulaire .flo-radio { 
+	position: relative;
+	margin-right: 4px;
+	background: white;
+	display: inline-block;
+  border: 3px solid #098851;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px; 
+	-o-border-radius: 2px; 
+	border-radius: 2px;		
+	height: 21px;
+	width: 21px;
+	top: 5px;	
+}
+
+.formulaire .flo-checkbox:before, 
+.formulaire .flo-radio:before {
+  content: '';
+  display: none;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-o-box-sizing: content-box;
+	box-sizing: content-box;
+	padding: 0;	
+	margin: 0;
+
+}
+
+
+.formulaire input:checked + .flo-checkbox:before, 
+.formulaire input:checked + .flo-radio:before {
+    display: block;
+}
+
+
+/* BLOC REMPLACE 
+.formulaire .flo-checkbox:before {
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  width: 6px;
+  height: 3px;
+  border: solid #fff;
+  border-width: 0 0 3px 3px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.formulaire input:checked + .flo-checkbox, 
+.formulaire input:checked + .flo-radio{ 
+border: 3px solid #1abc9c; 
+background:#1abc9c; 
+}
+
+*/
+
+.formulaire .flo-checkbox:before {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 22px;
+  height: 6px;
+  border: solid #098851;
+  border-width: 0 0 3px 3px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  transition: all 0.3ms ease-in-out;
+}
+
+.formulaire input:checked + .flo-checkbox, 
+.formulaire input:checked + .flo-radio{ 
+	border: 3px solid #1abc9c; 
+	/* background:#1abc9c;  */
+  background:#fff;
+}
+
+.formulaire .flo-radio { 
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px; 
+	-o-border-radius: 20px; 
+	border-radius: 20px;
+ 
+}
+.formulaire .flo-radio:before {
+  margin: 3px;
+  width: 9px;
+  height: 9px;
+  background: #fff;
+  -webkit-border-radius: 10px;
+	-moz-border-radius: 10px; 
+	-o-border-radius: 10px; 
+	border-radius: 10px;
+}
+
+/* @radio + checkbox :hover + :focus state 
+--------------------------------------------------- */
+.formulaire input:hover + .flo-radio,
+.formulaire input:hover + .flo-checkbox,
+.formulaire input:focus + .flo-checkbox, 
+.formulaire input:focus + .flo-radio{
+    border-color: #1abc9c;
+}
+
+.formulaire input:focus + .flo-radio:before{ background: #fff; }
+.formulaire input:focus + .flo-checkbox:before{ border-color: #fff; }
+
+/* @toggle switch elements 
+-------------------------------------------------- */
+.formulaire .flo-switch {
+	cursor:pointer; 
+	position: relative; 
+	padding-right:10px;
+    display: inline-block;
+	margin-bottom:5px;
+	height: 26px;
+}
+
+.formulaire .flo-switch > .switch-label {
+	cursor:pointer;
+    display: inline-block;
+    position: relative;
+    height: 25px;
+	width: 58px;
+	color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+	line-height: 20px;
+    text-align: center;
+    background: #B5C1C7;
+    border: 2px solid #B5C1C7;
+	text-transform: uppercase;
+	font-family:Helvetica, Arial, sans-serif;
+  -webkit-transition: 0.3s ease-out;
+  -moz-transition: 0.3s ease-out;
+  -o-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-o-border-radius: 2px;
+	border-radius: 2px;	
+}
+.formulaire .flo-switch .switch-title{ 
+	display:inline-block; 
+	padding-left:5px; 
+	position:relative; 
+	top:-7px; 
+}
+.formulaire .flo-switch > .switch-label:before {
+  content: attr(data-off);
+  position: absolute;
+  top: 1px;
+  right: 3px;
+  width: 33px;
+}
+
+.formulaire .flo-switch > .switch-label:after {
+	content:"";	
+  margin: 1px;
+  width: 19px;
+  height: 19px;
+	display: block;
+  background: #fff;
+  -webkit-border-radius: 1px;
+	-moz-border-radius: 1px;
+	-o-border-radius: 1px;
+	border-radius: 1px;
+}
+
+.formulaire .flo-switch > input {
+	appearance: none;
+	position: absolute;
+  width: inherit;
+  height: inherit;
+	clip: rect(1px 1px 1px 1px); 
+	clip: rect(1px, 1px, 1px, 1px);
+	overflow: hidden;	
+  opacity: 0;
+	left: 0;
+	top: 0;
+   
+}
+
+/* @toggle switch focus state 
+-------------------------------------------------------------- */
+.formulaire .flo-switch > input:focus { outline: none; }
+.formulaire .flo-switch > input:focus + .switch-label { 
+	color: #fff; 
+	border-color: #a1a6a9; 
+	background:#a1a6a9; 
+}
+
+.formulaire .flo-switch > input:focus + .switch-label:after { background: #fff; }
+
+/* @toggle switch normal state 
+--------------------------------------------------------------- */
+.formulaire .flo-switch > input:checked + .switch-label {
+  border-color: #1ABC9C;
+	background: #1ABC9C; 
+	padding-left: 33px;
+	color: white;
+}
+
+.formulaire .flo-switch > input:checked + .switch-label:before {
+    content: attr(data-on);
+    left: 1px;
+	top:1px;
+}
+
+.formulaire .flo-switch > input:checked + .switch-label:after {
+    margin: 1px;
+    width: 19px;
+    height: 19px;
+    background: white;
+}
+
+/* @toggle switch normal state focus 
+--------------------------------------------------------------------------------- */
+.formulaire .flo-switch > input:checked:focus + .switch-label { 
+	background: #16a085; 
+	border-color: #16a085; 
+}
+
+/* @buttons 
+----------------------------------------------------- */
+.formulaire .flo-button {
+  border: 0;
+	height: 42px;
+	color: #243140;
+	line-height: 1;
+	font-size:15px; 
+  cursor: pointer;
+	padding: 0 18px;
+	text-align: center;
+	vertical-align: top;
+  background: #bdc3c7;
+	display: inline-block;
+	-webkit-user-drag: none;
+	text-shadow: 0 1px rgba(255, 255, 255, 0.2);
+
+}
+
+
+
+/* @buttons :hover, :active states 
+---------------------------------------------------------------- */
+.formulaire .flo-button:hover { color: #243140; background: #cacfd2; }
+.formulaire .flo-button:active{ color: #1d2938; background: #a1a6a9; }
+.formulaire a.flo-button, 
+.formulaire span.flo-button, 
+.formulaire label.flo-button { line-height: 42px; text-decoration: none; }
+.formulaire .flo-button i{ font-size:14px; }
+.formulaire .flo-button-list .flo-button{ margin-bottom:5px; }
+
+/* @primary button theme
+-------------------------------------------- */
+.formulaire .btn-themed {  background-color: #1abc9c;  }
+.formulaire .btn-themed:hover,
+.formulaire .btn-themed:focus { background-color: #48c9b0; }
+.formulaire .btn-themed:active{ background-color: #16a085; }
+.formulaire .btn-themed, 
+.formulaire .btn-themed:hover,
+.formulaire .btn-themed:focus, 
+.formulaire .btn-themed:active{
+	text-shadow: 0 1px rgba(0, 0, 0, 0.08);
+	color: #fff; 
+}
+
+
+/* @icon append (right) :: prepend (left)
+------------------------------------------------- */
+.formulaire .append-icon, 
+.formulaire .prepend-icon{
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+	width:100%;
+}
+
+.formulaire .append-icon .field-icon, 
+.formulaire .prepend-icon .field-icon{
+	top:0;
+	z-index:1;
+	width:42px;
+	height:42px;
+	color: inherit;
+	line-height:42px;
+	position:absolute;
+	text-align: center;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    pointer-events: none;
+}
+
+.formulaire .append-icon .field-icon i, 
+.formulaire .prepend-icon .field-icon i{ 
+	position:relative;
+	font-size:14px;
+}
+
+.formulaire .prepend-icon .field-icon{ left:0;  }
+.formulaire .append-icon .field-icon{ right:0; }
+.formulaire .prepend-icon > input,
+.formulaire .prepend-icon > select, 
+.formulaire .prepend-icon > textarea{ padding-left:36px; }
+.formulaire .append-icon > input, 
+.formulaire .append-icon > textarea{ padding-right:36px; padding-left:10px;  }
+.formulaire .append-icon > textarea{ padding-right:36px; }
+.formulaire .flo-select .field-icon{ line-height:42px; z-index:99!important; }
+.formulaire .prepend-icon > select{ padding-left:30px;  }
+
+/* @tooltips on inputs + textareas 
+------------------------------------------------- */ 
+.formulaire .flo-tooltip {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+	color: #fff;	
+	width: 184px;
+	left: -9999px;
+	top:auto;
+	font-size: 11px;
+	font-weight:normal;
+	background: #34495E;
+	-webkit-transition: margin 0.6s, opacity 0.6s;
+	-moz-transition: margin 0.6s, opacity 0.6s;
+	-ms-transition: margin 0.6s, opacity 0.6s;
+	-o-transition: margin 0.6s, opacity 0.6s;
+	transition: margin 0.6s, opacity 0.6s;
+}
+
+.formulaire .flo-tooltip > em{ padding:12px; font-style:normal; display:block; position:static; }
+.formulaire .flo-tooltip:after { content: ''; position: absolute; }
+.formulaire .flo-input:focus + .flo-tooltip, 
+.formulaire .flo-textarea:focus + .flo-tooltip,
+.formulaire .flo-select > select:focus ~ .flo-tooltip { opacity: 1; z-index: 9999; }
+
+/* @tooltip right-top
+------------------------------------------------- */
+.formulaire .tip-right { bottom: 100%; margin-bottom: -20px; }
+.formulaire .tip-right:after {
+	top: 100%;
+	right: 12px;
+	border-top: 8px solid #34495E;
+	border-right: 8px solid transparent;
+	border-left: 8px solid transparent;
+}
+
+.formulaire .flo-input:focus + .tip-right,
+.formulaire .flo-textarea:focus + .tip-right,
+.formulaire .flo-select > select:focus ~ .tip-right {
+	right: 0;
+	left: auto;
+	margin-bottom: 10px;
+}
+
+/* @tooltip left-top
+------------------------------------------------- */
+.formulaire .tip-left { bottom: 100%; margin-bottom: -20px; }
+.formulaire .tip-left:after {
+	top: 100%;
+	left: 12px;
+	border-top: 8px solid #34495E;
+	border-right: 8px solid transparent;
+	border-left: 8px solid transparent;
+}
+
+.formulaire .flo-input:focus + .tip-left,
+.formulaire .flo-textarea:focus + .tip-left,
+.formulaire .flo-select > select:focus ~ .tip-left {
+	left: 0;
+	right: auto;
+	margin-bottom: 10px;
+}
+
+/* @.flo-notification messages | info | error | warning | success
+-------------------------------------------------------------- */
+.formulaire .form-msg{ display:none; }
+.formulaire .flo-notification { color: #444; padding:15px; position:relative; margin-bottom:10px; }
+.formulaire .flo-notification p{ margin:0; padding:0 15px; padding-left:5px; line-height:normal;  }
+.formulaire .flo-notification .close-btn{
+	margin-top: -7px;
+	padding: inherit;
+	position: absolute;
+	text-decoration:none; 
+  font: bold 20px/20px Arial, sans-serif;
+	opacity: 0.65; 	
+	color: inherit;
+  display: block;    
+  right:1px;
+	top:14%;
+}
+
+.formulaire .flo-notification .close-btn:hover{ opacity: 1; }
+.formulaire .alert-info { color:#163161; background-color: #cfe6fc; }
+.formulaire .alert-success { color:#336633; background-color: #d2f7ad; }
+.formulaire .alert-warning { color: #CC6600; background-color: #fae7a2; }
+.formulaire .alert-error { color:#990000; background-color: #FBDBCF; }
+
+
+/* @form element :hover state 
+-------------------------------------------- */
+.formulaire .flo-input:hover,
+.formulaire .flo-textarea:hover,
+.formulaire .flo-select > select:hover,
+.formulaire .flo-selectmulti select:hover, 
+.formulaire .flo-input:hover ~ .flo-hint,
+.formulaire .flo-file .file-input:hover + .flo-input,
+.formulaire .flo-textarea:hover ~ .flo-hint{
+	border-color: #da9c3a;
+}
+
+
+/* @form element :focus state 
+-------------------------------------------------------- */
+.formulaire .flo-input:focus,
+.formulaire .flo-textarea:focus,
+.formulaire .flo-select > select:focus,
+.formulaire .flo-selectmulti select:focus{ border-color: #da9c3a; color: #3C3C3C; }
+
+.formulaire .flo-input:focus {  height: 40px; margin-top: 10px;}
+.formulaire .flo-textarea:focus{  height: 120px; margin-top: 10px;}
+
+
+.formulaire .flo-input:focus ~ .flop-libele,
+.formulaire .flo-textarea:focus ~ .flop-libele,
+.formulaire .flo-select > select:focus ~ .flop-libele,
+.formulaire .flo-selectmulti select:focus ~ .flop-libele { 
+  top: -10px;
+  font-style: italic;
+  margin: auto 10px 0;
+  opacity: 1;
+}
+
+
+
+.formulaire .flo-select > select:focus { z-index:10; z-index:20\9; }
+.formulaire .flo-input:focus ~ .field-icon i,
+.formulaire .flo-textarea:focus ~ .field-icon i{ color:#1ABC9C; }
+.formulaire .flo-selectmulti select:focus, 
+.formulaire .flo-input:focus ~ .flo-hint,
+.formulaire .flo-textarea:focus ~ .flo-hint, 
+.formulaire .flo-file .file-input:focus + .flo-input{ border-color: #1ABC9C; }
+.formulaire .flo-select > select:focus + .arrow{ color:#1ABC9C; }
+
+/* @blue theme elements
+---------------------------------------------------------------------- */
+.theme-blue .flo-input:hover,
+.theme-blue .flo-textarea:hover,
+.theme-blue .flo-select > select:hover,
+.theme-blue .flo-selectmulti select:hover, 
+.theme-blue .flo-input:hover ~ .flo-hint,
+.theme-blue .flo-file .file-input:hover + .flo-input,
+.theme-blue .flo-textarea:hover ~ .flo-hint{
+	border-color: #6FB6E6;
+}
+
+.theme-blue .flo-input:focus,
+.theme-blue .flo-textarea:focus,
+.theme-blue .flo-select > select:focus,
+.theme-blue .flo-selectmulti select:focus{ border-color: #3498DB; color: #3C3C3C; }
+
+.theme-blue .flo-input:focus ~ .field-icon i,
+.theme-blue .flo-textarea:focus ~ .field-icon i{ color:#3498DB; }
+.theme-blue .flo-selectmulti select:focus, 
+.theme-blue .flo-input:focus ~ .flo-hint,
+.theme-blue .flo-textarea:focus ~ .flo-hint, 
+.theme-blue .flo-file .file-input:focus + .flo-input{ border-color:#3498DB; }
+.theme-blue .flo-select > select:focus + .arrow{ color:#3498DB; }
+
+/* @blue theme buttons 
+-------------------------------------------------------------------- */
+.theme-blue .btn-themed {  background-color: #3498DB;  }
+.theme-blue .btn-themed:hover,
+.theme-blue .btn-themed:focus,
+.theme-blue .btn-themed:active { background-color: #2980B9; }
+
+/* @blue theme checkboxes + radios 
+-------------------------------------------------------------------- */
+.theme-blue input:checked + .flo-checkbox, 
+.theme-blue input:checked + .flo-radio{  border: 3px solid #3498DB; background:#3498DB;  } 
+.theme-blue input:hover + .flo-radio,
+.theme-blue input:hover + .flo-checkbox,
+.theme-blue input:focus + .flo-checkbox, 
+.theme-blue input:focus + .flo-radio{ border-color: #3498DB; }
+
+/* @blue theme switches
+-------------------------------------------------------------------- */
+.theme-blue .flo-switch > input:checked + .switch-label { border-color:#3498DB; background:#3498DB; }
+.theme-blue .flo-switch > input:checked:focus + .switch-label {  background:#2980B9; border-color:#2980B9; }
+
+/* @red theme elements
+---------------------------------------------------------------------- */
+.theme-red .flo-input:hover,
+.theme-red .flo-textarea:hover,
+.theme-red .flo-select > select:hover,
+.theme-red .flo-selectmulti select:hover, 
+.theme-red .flo-input:hover ~ .flo-hint,
+.theme-red .flo-file .file-input:hover + .flo-input,
+.theme-red .flo-textarea:hover ~ .flo-hint{
+	border-color: #E95B4B;
+}
+
+.theme-red .flo-input:focus,
+.theme-red .flo-textarea:focus,
+.theme-red .flo-select > select:focus,
+.theme-red .flo-selectmulti select:focus{ border-color: #E74C3C; color: #3C3C3C; }
+.theme-red .flo-input:focus ~ .field-icon i,
+.theme-red .flo-textarea:focus ~ .field-icon i{ color:#E74C3C; }
+.theme-red .flo-selectmulti select:focus, 
+.theme-red .flo-input:focus ~ .flo-hint,
+.theme-red .flo-textarea:focus ~ .flo-hint, 
+.theme-red .flo-file .file-input:focus + .flo-input{ border-color:#E74C3C; }
+.theme-red .flo-select > select:focus + .arrow{ color:#E74C3C; }
+
+/* @red theme buttons 
+-------------------------------------------------------------------- */
+.theme-red .btn-themed {  background-color: #E74C3C;  }
+.theme-red .btn-themed:hover,
+.theme-red .btn-themed:focus,
+.theme-red .btn-themed:active { background-color: #C0392B; }
+
+/* @red theme checkboxes + radios 
+-------------------------------------------------------------------- */
+.theme-red input:checked + .flo-checkbox, 
+.theme-red input:checked + .flo-radio{  border: 3px solid #E74C3C; background:#E74C3C;  } 
+.theme-red input:hover + .flo-radio,
+.theme-red input:hover + .flo-checkbox,
+.theme-red input:focus + .flo-checkbox, 
+.theme-red input:focus + .flo-radio{ border-color: #E74C3C; }
+
+/* @red theme switches
+-------------------------------------------------------------------- */
+.theme-red .flo-switch > input:checked + .switch-label { border-color:#E74C3C; background:#E74C3C; }
+.theme-red .flo-switch > input:checked:focus + .switch-label {  background:#C0392B; border-color:#C0392B; }
+
+/* @purple theme elements
+---------------------------------------------------------------------- */
+.theme-purple .flo-input:hover,
+.theme-purple .flo-textarea:hover,
+.theme-purple .flo-select > select:hover,
+.theme-purple .flo-selectmulti select:hover, 
+.theme-purple .flo-input:hover ~ .flo-hint,
+.theme-purple .flo-file .file-input:hover + .flo-input,
+.theme-purple .flo-textarea:hover ~ .flo-hint{
+	border-color: #AA73C1;
+}
+
+.theme-purple .flo-input:focus,
+.theme-purple .flo-textarea:focus,
+.theme-purple .flo-select > select:focus,
+.theme-purple .flo-selectmulti select:focus{ border-color: #9B59B6; color: #3C3C3C; }
+.theme-purple .flo-input:focus ~ .field-icon i,
+.theme-purple .flo-textarea:focus ~ .field-icon i{ color:#9B59B6; }
+.theme-purple .flo-selectmulti select:focus, 
+.theme-purple .flo-input:focus ~ .flo-hint,
+.theme-purple .flo-textarea:focus ~ .flo-hint, 
+.theme-purple .flo-file .file-input:focus + .flo-input{ border-color:#9B59B6; }
+.theme-purple .flo-select > select:focus + .arrow{ color:#9B59B6; }
+
+/* @purple theme buttons 
+-------------------------------------------------------------------- */
+.theme-purple .btn-themed {  background-color: #9B59B6;  }
+.theme-purple .btn-themed:hover,
+.theme-purple .btn-themed:focus,
+.theme-purple .btn-themed:active { background-color: #8E44AD; }
+
+/* @purple theme checkboxes + radios 
+-------------------------------------------------------------------- */
+.theme-purple input:checked + .flo-checkbox, 
+.theme-purple input:checked + .flo-radio{  border: 3px solid #9B59B6; background:#9B59B6;  } 
+.theme-purple input:hover + .flo-radio,
+.theme-purple input:hover + .flo-checkbox,
+.theme-purple input:focus + .flo-checkbox, 
+.theme-purple input:focus + .flo-radio{ border-color: #9B59B6; }
+
+/* @purple theme switches
+-------------------------------------------------------------------- */
+.theme-purple .flo-switch > input:checked + .switch-label { border-color:#9B59B6; background:#9B59B6; }
+.theme-purple .flo-switch > input:checked:focus + .switch-label {  background:#8E44AD; border-color:#8E44AD; }
+
+/* @black theme elements
+---------------------------------------------------------------------- */
+.theme-black .flo-input:hover,
+.theme-black .flo-textarea:hover,
+.theme-black .flo-select > select:hover,
+.theme-black .flo-selectmulti select:hover, 
+.theme-black .flo-input:hover ~ .flo-hint,
+.theme-black .flo-file .file-input:hover + .flo-input,
+.theme-black .flo-textarea:hover ~ .flo-hint{
+	border-color: #3E5771;
+}
+
+.theme-black .flo-input:focus,
+.theme-black .flo-textarea:focus,
+.theme-black .flo-select > select:focus,
+.theme-black .flo-selectmulti select:focus{ border-color: #34495E; color: #3C3C3C; }
+.theme-black .flo-input:focus ~ .field-icon i,
+.theme-black .flo-textarea:focus ~ .field-icon i{ color:#34495E; }
+.theme-black .flo-selectmulti select:focus, 
+.theme-black .flo-input:focus ~ .flo-hint,
+.theme-black .flo-textarea:focus ~ .flo-hint, 
+.theme-black .flo-file .file-input:focus + .flo-input{ border-color:#34495E; }
+.theme-black .flo-select > select:focus + .arrow{ color:#34495E; }
+
+/* @black theme buttons 
+-------------------------------------------------------------------- */
+.theme-black .btn-themed {  background-color: #34495E;  }
+.theme-black .btn-themed:hover,
+.theme-black .btn-themed:focus,
+.theme-black .btn-themed:active { background-color: #2C3E50; }
+
+/* @black theme checkboxes + radios 
+-------------------------------------------------------------------- */
+.theme-black input:checked + .flo-checkbox, 
+.theme-black input:checked + .flo-radio{  border: 3px solid #34495E; background:#34495E;  } 
+.theme-black input:hover + .flo-radio,
+.theme-black input:hover + .flo-checkbox,
+.theme-black input:focus + .flo-checkbox, 
+.theme-black input:focus + .flo-radio{ border-color: #34495E; }
+
+/* @black theme switches
+-------------------------------------------------------------------- */
+.theme-black .flo-switch > input:checked + .switch-label { border-color:#34495E; background:#34495E; }
+.theme-black .flo-switch > input:checked:focus + .switch-label {  background:#2C3E50; border-color:#2C3E50; }
+
+/* @orange theme elements
+---------------------------------------------------------------------- */
+.theme-orange .flo-input:hover,
+.theme-orange .flo-textarea:hover,
+.theme-orange .flo-select > select:hover,
+.theme-orange .flo-selectmulti select:hover, 
+.theme-orange .flo-input:hover ~ .flo-hint,
+.theme-orange .flo-file .file-input:hover + .flo-input,
+.theme-orange .flo-textarea:hover ~ .flo-hint{
+	border-color: #F1C40F;
+}
+
+.theme-orange .flo-input:focus,
+.theme-orange .flo-textarea:focus,
+.theme-orange .flo-select > select:focus,
+.theme-orange .flo-selectmulti select:focus{ border-color: #F39C12; color: #3C3C3C; }
+.theme-orange .flo-input:focus ~ .field-icon i,
+.theme-orange .flo-textarea:focus ~ .field-icon i{ color:#F39C12; }
+.theme-orange .flo-selectmulti select:focus, 
+.theme-orange .flo-input:focus ~ .flo-hint,
+.theme-orange .flo-textarea:focus ~ .flo-hint, 
+.theme-orange .flo-file .file-input:focus + .flo-input{ border-color:#F39C12; }
+.theme-orange .flo-select > select:focus + .arrow{ color:#F39C12; }
+
+/* @orange theme buttons 
+-------------------------------------------------------------------- */
+.theme-orange .btn-themed {  background-color: #F39C12;  }
+.theme-orange .btn-themed:hover,
+.theme-orange .btn-themed:focus,
+.theme-orange .btn-themed:active { background-color: #E67E22; }
+
+/* @orange theme checkboxes + radios 
+-------------------------------------------------------------------- */
+.theme-orange input:checked + .flo-checkbox, 
+.theme-orange input:checked + .flo-radio{  border: 3px solid #F39C12; background:#F39C12;  } 
+.theme-orange input:hover + .flo-radio,
+.theme-orange input:hover + .flo-checkbox,
+.theme-orange input:focus + .flo-checkbox, 
+.theme-orange input:focus + .flo-radio{ border-color: #F39C12; }
+
+/* @orange theme switches
+-------------------------------------------------------------------- */
+.theme-orange .flo-switch > input:checked + .switch-label { border-color:#F39C12; background:#F39C12; }
+.theme-orange .flo-switch > input:checked:focus + .switch-label {  background:#E67E22; border-color:#E67E22; }
+
+
+
+/* @validaion - error state
+------------------------------------- */
+.formulaire .state-error .flo-input,
+.formulaire .state-error .flo-textarea,
+.formulaire .state-error.flo-select > select,
+.formulaire .state-error.flo-selectmulti > select,
+.formulaire .state-error input:hover + .flo-checkbox, 
+.formulaire .state-error input:hover + .flo-radio,
+.formulaire .state-error input:focus + .flo-checkbox, 
+.formulaire .state-error input:focus + .flo-radio,
+.formulaire .state-error .flo-checkbox, 
+.formulaire .state-error .flo-radio{
+	background:#FEEFE9;
+	border-color:#E46B66;
+}
+
+.formulaire .state-error .flo-input ~ .field-icon i,
+.formulaire .state-error .flo-textarea ~ .field-icon i{  color: #e74c3c; }
+.formulaire .state-error.flo-select .arrow { color: #e74c3c; }
+.formulaire .state-error.flo-select:before {  border-left:1px solid #E46B66; }
+.formulaire .state-error .flo-input ~ .flo-hint,
+.formulaire .state-error.flo-file .file-input:hover + .flo-input, 
+.formulaire .state-error .flo-textarea ~ .flo-hint { border-color:#E46B66; }
+.formulaire .state-error + em{ 
+	display: block!important;
+	margin-top: 6px;
+	padding: 0 3px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-style: normal;
+	line-height: normal;
+	color:#CC0000;
+	font-size:0.85em;
+  
+}
+
+/* @validaion - success state 
+-------------------------------------------------- */
+.formulaire .state-success .flo-input,
+.formulaire .state-success .flo-textarea,
+.formulaire .state-success.flo-select > select,
+.formulaire .state-success.flo-selectmulti > select{
+	background:#EAFCD8;
+	border-color:#2ecc71;
+}
+
+
+.formulaire .state-success .flo-input ~ .field-icon i,
+.formulaire .state-success .flo-textarea ~ .field-icon i{  color: #2ecc71; }
+.formulaire .state-success.flo-select .arrow { color: #2ecc71; }
+.formulaire .state-success.flo-select:before {  border-left:1px solid #2ecc71; }
+.formulaire .state-success .flo-input ~ .flo-hint,
+.formulaire .state-success.flo-file .file-input:hover + .flo-input, 
+.formulaire .state-success .flo-textarea ~ .flo-hint { border-color:#2ecc71; }
+
+
+/* @disabled state 
+----------------------------------------------- */
+.formulaire .flo-button[disabled],
+.formulaire .state-disabled .flo-button,
+.formulaire input[disabled] + .flo-radio,
+.formulaire input[disabled] + .flo-checkbox,
+.formulaire .flo-switch > input[disabled] + label{
+	cursor: default;
+	opacity:0.5;
+}
+
+.formulaire .flo-input[disabled],
+.formulaire .flo-textarea[disabled], 
+.formulaire .flo-select > select[disabled], 
+.formulaire .flo-selectmulti select[disabled],
+.formulaire .flo-input[disabled] ~ .flo-hint,
+.formulaire .flo-file .file-input[disabled] + .flo-input,
+.formulaire .flo-file .file-input[disabled]:hover + .flo-input, 
+.formulaire .flo-textarea[disabled] ~ .flo-hint {    
+  background-color: #f4f6f6;
+  border-color: #d5dbdb!important;
+  cursor: default;
+  color: #848484;
+  opacity:0.7;
+}
+
+.formulaire input[disabled] ~ .field-icon i,
+.formulaire textarea[disabled] ~ .field-icon i,
+.formulaire .flo-select > select[disabled] + .arrow{ 
+	opacity:0.4; 
+}
+
+/* @progress bars 
+------------------------------------------------------*/
+.formulaire .flo-progress{ display:none; }
+.formulaire .flo-ui .flo-progressbar { margin-bottom:5px; }
+.formulaire .flo-progressbar {
+    position: relative;
+    background: #EDF0F8;
+    -webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.formulaire .flo-progressbar .percent { 
+	position:absolute; 
+	display:inline-block; 
+	top:-3px; 
+	right:-24px; 
+	font-size:9px; 
+	color:#93A2AA; 
+}
+.formulaire .flo-progressbar > .bar {   
+	width:60%; 
+	height:7px;
+	display: block;
+	background-size: 16px 16px;	
+	background-color: #bdc3c7; 
+    -webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+}
+
+
+/* @progress bar themes
+----------------------------------------------------------- */
+.formulaire .bar-green > .bar { background-color: #1abc9c; }
+.formulaire .bar-blue > .bar     { background-color: #3498db; }
+.formulaire .bar-black > .bar    { background-color: #34495e; }
+.formulaire .bar-purple > .bar   { background-color: #9B59B6; }
+.formulaire .bar-red > .bar      { background-color: #e74c3c; }
+.formulaire .bar-orange > .bar   { background-color: #ed9c28; }
+
+/* @progress bar strips + animation IE10+ 
+----------------------------------------------------------- */
+.formulaire .elemprogress > button[type="submit"]:hover,
+.formulaire .elemprogress > button[type="submit"],
+.formulaire .flo-progressbar > .bar {
+    background-size: 16px 16px;
+    background-image: -webkit-linear-gradient(top left,  
+					  transparent, transparent 25%, rgba(255, 255, 255, 0.3) 25%, rgba(255, 255, 255, 0.3) 50%, 
+					  transparent 50%, transparent 75%, rgba(255, 255, 255, 0.3) 75%, rgba(255, 255, 255, 0.3));
+					  
+    background-image: -moz-linear-gradient(top left,  
+					  transparent, transparent 25%, rgba(255, 255, 255, 0.3) 25%, rgba(255, 255, 255, 0.3) 50%, 
+					  transparent 50%, transparent 75%, rgba(255, 255, 255, 0.3) 75%, rgba(255, 255, 255, 0.3));
+					  
+    background-image: -o-linear-gradient(top left,  
+					  transparent, transparent 25%, rgba(255, 255, 255, 0.3) 25%, rgba(255, 255, 255, 0.3) 50%, 
+					  transparent 50%, transparent 75%, rgba(255, 255, 255, 0.3) 75%, rgba(255, 255, 255, 0.3));
+					  
+    background-image: linear-gradient(to bottom right,  
+					  transparent, transparent 25%, rgba(255, 255, 255, 0.3) 25%, rgba(255, 255, 255, 0.3) 50%, 
+					  transparent 50%, transparent 75%, rgba(255, 255, 255, 0.3) 75%, rgba(255, 255, 255, 0.3));
+}
+
+.formulaire .elemprogress > button[type="submit"], 
+.formulaire .elemprogress > button[type="submit"]:hover,  
+.formulaire .progress-animated > .bar{
+	-webkit-animation: floprogress .6s linear infinite;
+	-moz-animation: floprogress .6s linear infinite;
+	-o-animation: floprogress .6s linear infinite;
+    animation: floprogress .6s linear infinite;
+}
+
+.formulaire .elemprogress > button[type="submit"]:hover{ cursor:wait; }
+
+@-webkit-keyframes floprogress {
+    from { background-position: 0 0; }
+	to { background-position: -16px 0; }
+}
+
+
+@-moz-keyframes floprogress {
+	from { background-position: 0 0; }
+	to { background-position: -16px 0; }
+}
+
+@-o-keyframes floprogress {
+	from { background-position: 0 0; }
+	to { background-position: -16px 0; }
+}
+
+@keyframes floprogress {
+    from { background-position: 0 0; }
+	to { background-position: -16px 0; }
+}
+
+
+
+/* @responsiveness for tablets + smart mobile 
+-------------------------------------------------- */
+
+
+
+
+
+.cover_content h1 {
+  margin-left: -28px;
+  margin-right: 70px;
+  text-align: left;
+}
+
+.cover_content .div_h1 {
+
+  font-size: 36px;
+  font-weight: 700px;
+  text-align: right;
+  align-items: center;
+
+}
+
+.cover_content .div_h1 .tiret_long {
+  position: absolute;
+  width: 230px;
+  height: 0;
+  border: 6px solid #F2F2F2;
+  left: 0;
+  bottom: 40px;
+}
+
+.cover_content .div_h1 .simple_span {
+
+  margin-left: 80px;
+  margin-right: -30px;
+
+}
+
+
+.une_section {
+
+  right: 0;
+  left: 0;
+  height: 92vh;
+  padding: 30px 20px;
+  border: 2px dashed maroon;
+
+}
+
+.une_section .un_titre,
+.une_section h1.un_titre,
+.une_section h2.un_titre,
+.une_section h3.un_titre {
+
+  margin: -28px -20px 10px;
+  padding: 15px 20px;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+
+}
+
+.une_section .un_contenu {
+
+  border-bottom: 1px solid #444444;
+  min-height: 200px;
+  padding: 15px 20px;
+  margin: 0 auto;
+
+}
+
+.un_contenu .titre_style,
+.un_contenu h1.titre_style,
+.un_contenu h2.titre_style,
+.un_contenu h3.titre_style {
+
+  margin: -15px -20px 10px;
+  padding: 7px 20px;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+
+}
+
+.une_section .un_titre.LTR,
+.un_contenu .titre_style.LTR {
+  text-align: left;
+  padding-left: 40px;
+  overflow: hidden;
+}
+
+.une_section .un_titre.RTL,
+.un_contenu .titre_style.RTL {
+  text-align: right;
+  padding-right: 40px;
+  overflow: hidden;
+}
+
+.une_section .un_titre.LRTC,
+.un_contenu .titre_style.LRTC {
+  text-align: center;
+  overflow: hidden;
+}
+
+
+
+
+footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1024;
+  padding: 10px 15px;
+
+  background-color: #bfd1cd;
+  border-top: 3px solid var(--color-bg-br);
+}

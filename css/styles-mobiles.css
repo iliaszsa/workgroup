@@ -1,0 +1,141 @@
+  
+@media (max-width: 1366px) {
+    .navbar .dropdown .dropdown ul {
+      left: -90%;
+    }
+    .navbar .dropdown .dropdown:hover > ul {
+      left: -100%;
+    }
+}
+  
+  
+  /**
+  * Mobile Navigation 
+  */
+.mobile-nav-toggle {
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+    line-height: 0;
+    transition: all 0.5s ease-in;
+}
+  
+@media (max-width: 991px) {
+    .mobile-nav-toggle {
+      display: block;
+    }
+
+    .navbar ul {
+      display: none;
+    }
+  
+}
+
+
+@media (max-width: 992px) {
+
+    header .align-logo,
+    .align-logo {
+
+        margin-top: -10px;
+        padding: 7px;
+        height: 50px;
+        max-height: 50px;
+    }
+
+    #header #div-logo h1 {
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0;
+        max-width: 200px;
+        overflow: hidden;
+    }
+}
+
+
+
+@media (max-width: 767.98px) {
+
+    #header #div-logo h1 {
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0;
+        max-width: 200px;
+        overflow: hidden;
+    }
+
+    #header #div-logo a {
+        height: 48px;
+        max-height: 50px;
+        font-size: 22px;
+    }
+
+    #header #div-logo img {
+        padding: 0;
+        margin: -14px auto;
+        max-height: 48px;
+    }
+
+    .formulaire .form-row{ margin:0;  }
+    .formulaire .form-row .colm{  width: 100%; float:none; padding:0; }
+    .formulaire .align-right{ text-align: left; }
+}
+
+
+@media (max-width: 767.98px) {
+
+    .formulaire .button-input,
+    .formulaire .colm .button-input,
+    .colm .button-input {
+        right: 2px;
+    }
+
+
+    .formulaire .button-input,
+    .formulaire .colm .button-input,
+    .colm .button-input {
+        right: -100px;
+        opacity: 0.2;
+
+    }
+
+    .formulaire .flo-input:focus ~ .button-input,
+    .formulaire .flo-textarea:focus ~ .button-input,
+    .formulaire .flo-select > select:focus ~ .button-input,
+    .formulaire .flo-selectmulti select:focus ~ .button-input { 
+        right: 2px;
+        background: #1977cc;
+        opacity: 1;
+        /* box-shadow: 0 8px 6px -6px black; */
+    }
+
+}
+
+@media (max-width: 567.98px) {
+
+    #header #div-logo h1 {
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 0;
+        max-width: 200px;
+        overflow: hidden;
+    }
+
+    #header #div-logo h1 a {
+        font-size: 16px;
+    }
+
+    #header #div-logo a {
+        height: 48px;
+        max-height: 50px;
+        margin: -14px auto;
+    }
+
+    #header #div-logo img {
+        padding: 0;
+        margin: -14px auto;
+        max-height: 48px;
+    }
+
+}
