@@ -1,6 +1,9 @@
 <?php 
     
-    session_destroy();
+    if (isset($_SESSION['userConnect'])) {
+        session_destroy();
+    }
+        
 
     include __DIR__ ."./fonctions.php";
     include __DIR__ ."./les_class.php";
