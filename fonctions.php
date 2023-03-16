@@ -2,6 +2,8 @@
 
     include_once __DIR__ . "./config/paramcog.php";
 
+    $newDateMaj     = mktime(date('H'), date('i'), date('s'), date('m'), date('d'), date('Y'));//Date de mise à jour
+
     // informations sur la page
     $info_page      = pathinfo($_SERVER['PHP_SELF']);
 
@@ -137,7 +139,7 @@
                     ';
                 }
 
-                elseif ($key       == "Mon compte" AND isset($_SESSION['user-acces'])) {
+                elseif ($key       == "Mon compte" AND isset($_SESSION['userConnect'])) {
                     
                     echo'            
                     <li class="dropdown">
@@ -195,7 +197,7 @@
 
                 else {
                     echo'            
-                    <li class="'; if ($key  == 'Mon compte' AND  !isset($_SESSION['user-acces']) ) { echo' d-none';} echo ' ">
+                    <li class="'; if ($key  == 'Mon compte' AND  !isset($_SESSION['userConnect']) ) { echo' d-none';} echo ' ">
                         <a class="nav-link scrollto ';
                         if( $info_page['basename'] == $menus ){
                             echo' active';

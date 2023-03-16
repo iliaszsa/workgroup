@@ -1,5 +1,7 @@
 <?php 
 
+    include_once __DIR__ . "./sessions.php";
+    
     $domaine        = "localhost";
     $useRoot        = "root";
     $userPass       = "";
@@ -40,7 +42,6 @@
     
     // SELECTION DES TABLES DE LA BASE DES DONNEES
 
-    include_once __DIR__ . "./sessions.php";
     
 
 

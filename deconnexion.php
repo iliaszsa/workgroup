@@ -1,7 +1,11 @@
 <?php 
+    
+    session_destroy();
 
     include __DIR__ ."./fonctions.php";
     include __DIR__ ."./les_class.php";
+
+    
 
     $repMenus       = "ateliers";
     $name_exo       = strtoupper( $nom_fichier );
@@ -33,30 +37,30 @@
         ?>
         <!-- ======= END Header ======= -->
 
-
+        <div class="overlays"></div>
 
         <main>
 
-            <section class="back_cover">
+            <section class="back_cover" style="z-index: 1000;">
 
                 <div class="exercice">Exercice à réaliser : <?php echo $name_exo;?></div>
 
 
                 <div class="lecontenant">
                     
-                    <form class="formulaire pb-30 bg-white" action="./connexion.php" method="POST">
+                    <form class="formulaire pb-30 bg-white">
                         
                     
                         <div class="option-group field bg-info bx-shodow-black mt-7 pb-30 wid-md-50"> 
                             
-                            <h2 class="style-hx txt-center">Connexion à l'interface membre</h2>
+                            <h2 class="style-hx txt-center">Déconnexion de l'interface membre</h2>
                             
                             <div class="form-row wid-lg-70">
                                 <label id="LabelID" class="flo-option block pl-30">Identifiant</label>
                                 <section class="colm colm12">
                                     <input type="text" class="flo-input" id="identifiant" name="identifiant" autocomplete="off" placeholder="Identifiant..." maxlength="50" onkeyup=""
                                         onfocus="affich_div('LabelID');" onblur="affich_div('LabelID');"
-                                        value="<?php if (isset($_POST['identifiant']) ) { echo htmlspecialchars( trim($_POST['identifiant'])); } ?>">
+                                        value="<?php if (isset($_SESSION['userConnect']) ) { echo htmlspecialchars( trim($_SESSION['userConnect'])); } ?>" disabled>
                                     <label for="identifiant" class="flop-libele">Identifiant...</label>
                                 </section>
 
@@ -67,7 +71,7 @@
                                 <section class="colm colm12">
                                     <input type="password" class="flo-input" id="passeWord" name="passeWord" autocomplete="off" placeholder="Mot de passe..." maxlength="24" onkeyup=""
                                     onfocus="affich_div('LabelPassword');" onblur="affich_div('LabelPassword');"
-                                    value="<?php if (isset($_POST['passeWord']) ) { echo htmlspecialchars( trim($_POST['passeWord'])); } ?>">
+                                    value="<?php if (isset($_SESSION['userConnect']) ) { echo htmlspecialchars( trim($_SESSION['userConnect'])); } ?>" disabled>
                                     <label for="passeWord" class="flop-libele">Mot de passe...</label>
                                 </section>
                             </div>
@@ -112,9 +116,6 @@
             </section>
 
             
-
-            
-
 
         </main>
 
