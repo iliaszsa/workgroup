@@ -1,6 +1,9 @@
 <?php 
     
+    session_start();
+
     if (isset($_SESSION['userConnect'])) {
+        unset($_SESSION['userConnect'], $_SESSION['userdelais'], $_SESSION['securiteOs'] );
         session_destroy();
     }
         
@@ -132,6 +135,14 @@
         <script type="text/javascript" src="./js/fonctions.js"></script>
         <!-- <script type="text/javascript" src="../js/script-main.js"></script> -->
         <script type="text/javascript" src="./js/scripts.js"></script>
+
+        <script>            
+            
+            setTimeout(() => {
+                redirige("connexion.php");
+            }, 7000);
+
+        </script>
         
     </body>
 

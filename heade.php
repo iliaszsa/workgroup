@@ -7,12 +7,6 @@
     <meta name="keywords" content="Formation, Le bocal academy, LE BOCAL, pôle-emploi, Marseille, Débutant, DEV, WEB, W3, Développeur WEB, Tools webmaster">
     <meta name="author" content="ABOUDOU ASSOUMANI">
 
-    <?php 
-        if (isset($dossier_page) AND $dossier_page == "deconnexion.php") {
-            echo'<meta http-equiv="refresh" content="7;URL=connexion.php">';
-        }
-    ?>
-
     <title>COURS PHP | <?php echo $name_exo;?></title>
     
     <link rel="icon" type="image/png" sizes="256x256" href="logos/members.png">

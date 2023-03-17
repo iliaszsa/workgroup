@@ -33,7 +33,7 @@
         ?>
         <!-- ======= END Header ======= -->
 
-
+        <div class="overlays d-none"></div>
 
         <main>
 
@@ -128,6 +128,22 @@
         <script type="text/javascript" src="./js/fonctions.js"></script>
         <!-- <script type="text/javascript" src="../js/script-main.js"></script> -->
         <script type="text/javascript" src="./js/scripts.js"></script>
+
+        <script>
+            /* if (<?php //echo isset($_SESSION['userConnect']) AND isset($_SESSION['securiteOs']) ?>) {
+
+                document.querySelector(".overlays").classList.remove("d-none");
+                setTimeout(() => {
+                    redirige("espace-user?log=<?php //echo $_SESSION['securiteOs'];?>");
+                }, 7000); 
+            }
+
+            else {
+                document.querySelector(".overlays").classList.add("d-none");
+            } */
+
+        </script>
+
         
     </body>
 

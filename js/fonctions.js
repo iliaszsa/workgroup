@@ -232,6 +232,42 @@ function ViderThis($this) {
 
 }
 
+function redirige($page, $onglet) {
+    
+    if ($onglet == "" || $onglet == undefined) {
+        window.location.href = $page;
+    }
+    else {
+        window.open($page, "_blank");
+    }
+    
+}
+
+
+
+//+================================================================================================================
+//GENERATION DE CODE/MOT DE PASSE PROVISOIR
+function generer_codePass(champ_code) {
+    
+    var nbr_char        = 8; //generation d'un nombre à 8 chiffres
+    var x               = Math.random();
+    var nb              = x * Math.pow(10, nbr_char);
+    code_passe          = Math.round(nb);
+    if (code_passe.length <= 7) { code_passe = code_passe + "1";}
+
+    if (champ_code      == "" || champ_code == undefined) { 
+
+        return code_passe;
+    }
+    else {
+
+        var idgener     = document.getElementById(champ_code);
+        idgener.value   = code_passe;
+    }
+    
+    
+}
+
 
 
 ///****************** Fonction qui vide un champ, select, div et span  ***************************************

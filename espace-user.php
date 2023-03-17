@@ -1,5 +1,7 @@
 <?php 
 
+    session_start();
+
     include __DIR__ ."./fonctions.php";
     include __DIR__ ."./les_class.php";
 
@@ -41,7 +43,7 @@
                 <div class="exercice">Bienvenue <b style="font-weight: 700; color: #0000FF;"><?php echo $name_exo;?> </b></div>
 
 
-                <div class="lecontenant">
+                <div class="lecontenant pb-30">
                     
                     <form class="formulaire pb-30 bg-white">
                         
