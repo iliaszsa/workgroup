@@ -10,7 +10,10 @@
             </a>
         </div>
 
-        <?php  afficher_menu($table_menus); ?>
+        <nav id="navbar" class="navbar order-last order-lg-0">
+            <ul> <?php  afficher_menu($table_menus); ?></ul>
+            <i class="fas fa-bars mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
 
     </div>
 </header><!-- End Header -->

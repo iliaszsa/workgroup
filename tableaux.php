@@ -27,7 +27,7 @@
     // FIN DU TABLEAU $services_menus [];
     
     $menus_comptes     =    [   "Profil"        => "",
-                                "Services"      => "services.php",
+                                "Taches"        => "services.php",
                                 "Panier"        => "panier.php",
                                 "Affaires"      => "affaires.php",
                                 "Deconnexion"   => "deconnexion.php"
@@ -36,7 +36,7 @@
 
 
 
-    $table_menus        =   [   "Accuil"        => "index.php",
+    $table_menus        =   [   "Accueil"        => "index.php",
                                 "Blog"          => "blog.php",
                                 "Ateliers"      => $sous_ateliers,
                                 "Services"      => $services_menus,
@@ -44,7 +44,7 @@
                                 "Mon compte"    => $menus_comptes
                             ];
 
-    // FIN DE LA TABLEAU $table_menus [];
+    // FIN DE LA TABLEAU $table_menus [];   
 
     
     $articles           =   [   ["titre" => "Acticle", "description" => "Test description" ],

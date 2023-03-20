@@ -1,6 +1,6 @@
 <?php 
 
-    include_once __DIR__ . "./config/paramcog.php";
+    include_once("config/paramcog.php");
 
     $newDateMaj     = mktime(date('H'), date('i'), date('s'), date('m'), date('d'), date('Y'));//Date de mise à jour
 
@@ -54,170 +54,168 @@
 
     function afficher_menu($liste_menus) {
         
-        global $info_page;
+        global $info_page, $linkCrypt;
 
-        echo' 
-        <nav id="navbar" class="navbar order-last order-lg-0">
-            <ul>';
+        foreach ($liste_menus as $key => $menus) {  
+            
+            if ($key       == "Ateliers") {
+                echo'            
+                <li class="dropdown">
 
-            foreach ($liste_menus as $key => $menus) {  
-                
-                if ($key       == "Ateliers") {
-                    echo'            
-                    <li class="dropdown">
+                    <a class="nav-link scrollto" href="#'.$key.'">
+                        <span> '.$key.'</span> 
+                        <i class="fas fa-chevron-right ml-10"></i>
+                    </a>
+                    <ul>';
+                    foreach ($menus as $nomMenu => $sousmenus) {
 
-                        <a class="nav-link scrollto" href="#'.$key.'">
-                            <span> '.$key.'</span> 
-                            <i class="fas fa-chevron-right ml-10"></i>
-                        </a>
-                        <ul>';
-                        foreach ($menus as $nomMenu => $sousmenus) {
-
-                            $maSousMenu     = str_replace("_", " ", substr(strrchr( $sousmenus, "/"), 1) );
-
-                            echo'
-                            <li'; if (substr($maSousMenu, 0, 7) != "atelier") {
-                               echo ' class="d-none"'; } echo'>
-                                <a class="nav-link scrollto ';
-                                if( $info_page['basename'] == $sousmenus."/index.php" ){
-                                    echo' active';
-                                }                        
-                                echo'" href="'.$sousmenus.'/index.php">'.$maSousMenu.'</a>
-                            </li>
-                            ';
-                        }
+                        $maSousMenu     = str_replace("_", " ", substr(strrchr( $sousmenus, "/"), 1) );
 
                         echo'
-                        </ul>
+                        <li'; if (substr($maSousMenu, 0, 7) != "atelier") {
+                            echo ' class="d-none"'; } echo'>
+                            <a class="nav-link scrollto ';
+                            if( $info_page['basename'] == $sousmenus."/index.php" ){
+                                echo' active';
+                            }                        
+                            echo'" href="'.$sousmenus.'/index.php">'.$maSousMenu.'</a>
+                        </li>
+                        ';
+                    }
 
-                    </li>                
-                    ';
-                } 
-                
-                elseif ($key       == "Services") {
-                    echo'            
-                    <li class="dropdown">
+                    echo'
+                    </ul>
 
-                        <a class="nav-link scrollto" href="#'.$key.'">
-                            <span> '.$key.'</span> 
-                            <i class="fas fa-chevron-right ml-10"></i>
-                        </a>
-                        <ul>';
-                        foreach ($menus as $nomService => $leservice) {
+                </li>                
+                ';
+            } 
+            
+            elseif ($key       == "Services") {
+                echo'            
+                <li class="dropdown">
 
+                    <a class="nav-link scrollto" href="#'.$key.'">
+                        <span> '.$key.'</span> 
+                        <i class="fas fa-chevron-right ml-10"></i>
+                    </a>
+                    <ul>';
+                    foreach ($menus as $nomService => $leservice) {
+
+                        echo'
+                        <li>
+                            <a class="nav-link scrollto ';
+                            if( $info_page['basename'] == $leservice ){
+                                echo' active';
+                            }                        
+                            echo'" href="'.$leservice.'">'.$nomService;
+                            if ($nomService == "Connexion") {
+                                echo'<i class="fas fa-user-lock fa-lg"></i>';
+                            } 
+                            elseif ($nomService == "Inscription") {
+                                echo'<i class="fas fa-user-plus fa-lg"></i>';
+                            }
+                            elseif ($nomService == "Contact") {
+                                echo'<i class="fas fa-envelope-open-text fa-lg"></i>';
+                            }
+
+                            else {
+                                echo'<i class="fas fa-moon fa-lg"></i>';
+                            }
+                            
                             echo'
-                            <li>
-                                <a class="nav-link scrollto ';
-                                if( $info_page['basename'] == $leservice ){
-                                    echo' active';
-                                }                        
-                                echo'" href="'.$leservice.'">'.$nomService;
-                                if ($nomService == "Connexion") {
-                                    echo'<i class="fas fa-user-lock fa-lg"></i>';
-                                } 
-                                elseif ($nomService == "Inscription") {
-                                    echo'<i class="fas fa-user-plus fa-lg"></i>';
+                            </a>
+                        </li>
+                        ';
+                    }
+
+                    echo'
+                    </ul>
+
+                </li>                
+                ';
+            }
+
+            //Si existance de session active(Afficher le menu compte)
+            elseif (isset($_SESSION['userConnect']) AND $key == "Mon compte" || $key == "Profil" || $key == "Taches" || $key == "Panier"  || $key == "Affaires") {
+                
+                echo'            
+                <li class="dropdown">
+
+                    <a class="nav-link scrollto" href="#'.$key.'">
+                        <span> '.$key.'</span> 
+                        <i class="fas fa-user-lock ml-10"></i>
+                    </a>
+                    <ul>';
+                    foreach ($menus as $nomRubrique => $laRubrique) {
+
+                        echo'
+                        <li>
+                            <a class="nav-link scrollto text-left';
+                            if( $info_page['basename'] == $laRubrique ){ echo' active'; } echo'"';
+                                
+                                if ($nomRubrique == "Affaires") {
+
+                                    $liens      = substr($laRubrique, 0, 8)."?annonces=".$linkCrypt;
+
+                                    echo' href="'.$liens.'" >';
+                                } else {
+                                    echo' href="'.$laRubrique.'" >';
                                 }
-                                elseif ($nomService == "Contact") {
-                                    echo'<i class="fas fa-envelope-open-text fa-lg"></i>';
+                                    echo $nomRubrique;
+
+                                if ($nomRubrique == "Profil") {
+                                    echo'<i class="fas fa-user-tie fa-lg"></i>';
+                                } 
+                                elseif ($nomRubrique == "Taches") {
+                                    echo'<i class="fas fa-list-check fa-lg"></i>';
+                                }
+                                elseif ($nomRubrique == "Panier") {
+                                    echo'<i class="fas fa-cart-plus fa-lg"></i>';
+                                }
+
+                                elseif ($nomRubrique == "Affaires") {
+                                    echo'<i class="fas fa-business-time fa-lg"></i>';
+                                }
+                                elseif ($nomRubrique == "Deconnexion") {
+                                    echo'<i class="fas fa-power-off fa-lg"></i>';
                                 }
 
                                 else {
                                     echo'<i class="fas fa-moon fa-lg"></i>';
                                 }
                                 
-                                echo'
-                                </a>
-                            </li>
-                            ';
-                        }
 
-                        echo'
-                        </ul>
-
-                    </li>                
-                    ';
-                }
-
-                elseif ($key       == "Mon compte" AND isset($_SESSION['userConnect'])) {
-                    
-                    echo'            
-                    <li class="dropdown">
-
-                        <a class="nav-link scrollto" href="#'.$key.'">
-                            <span> '.$key.'</span> 
-                            <i class="fas fa-user-lock ml-10"></i>
-                        </a>
-                        <ul>';
-                        foreach ($menus as $nomRubrique => $laRubrique) {
-
+                                // <i class="fas fa-user-lock"></i>
+                            
                             echo'
-                            <li>
-                                <a class="nav-link scrollto text-left';
-                                if( $info_page['basename'] == $laRubrique ){
-                                    echo' active';
-                                }                        
-                                echo'" href="'.$laRubrique.'">'.$nomRubrique;
-                                    if ($nomRubrique == "Profil") {
-                                        echo'<i class="fas fa-user-tie fa-lg"></i>';
-                                    } 
-                                    elseif ($nomRubrique == "Services") {
-                                        echo'<i class="fas fa-list-check fa-lg"></i>';
-                                    }
-                                    elseif ($nomRubrique == "Panier") {
-                                        echo'<i class="fas fa-cart-plus fa-lg"></i>';
-                                    }
+                            </a>
+                        </li>
+                        ';
+                    }
 
-                                    elseif ($nomRubrique == "Affaires") {
-                                        echo'<i class="fas fa-business-time fa-lg"></i>';
-                                    }
-                                    elseif ($nomRubrique == "Deconnexion") {
-                                        echo'<i class="fas fa-power-off fa-lg"></i>';
-                                    }
+                    echo'
+                    </ul>
 
-                                    else {
-                                        echo'<i class="fas fa-moon fa-lg"></i>';
-                                    }
-                                    
-
-                                    // <i class="fas fa-user-lock"></i>
-                                
-                                echo'
-                                </a>
-                            </li>
-                            ';
-                        }
-
-                        echo'
-                        </ul>
-
-                    </li>                
-                    ';
-                }
-
-                else {
-                    echo'            
-                    <li class="'; if ($key  == 'Mon compte' AND  !isset($_SESSION['userConnect']) ) { echo' d-none';} echo ' ">
-                        <a class="nav-link scrollto ';
-                        if( $info_page['basename'] == $menus ){
-                            echo' active';
-                        }
-                            echo'" href="'.$menus.'">
-                            '.$key.'
-                        </a>
-                    </li>                
-                    ';
-                }
-                
-                    
+                </li>                
+                ';
             }
 
-            echo' 
-            </ul>
-            <i class="fas fa-bars mobile-nav-toggle"></i>
-
-        </nav><!-- .navbar -->
-        ';
+            else {
+                echo'            
+                <li class="'; if ($key  == 'Mon compte' AND  !isset($_SESSION['userConnect']) ) { echo' d-none';} echo ' ">
+                    <a class="nav-link scrollto ';
+                    if( $info_page['basename'] == $menus ){
+                        echo' active';
+                    }
+                        echo'" href="'.$menus.'">
+                        '.$key.'
+                    </a>
+                </li>                
+                ';
+            }
+            
+                
+        }
 
     } // FIN DE LA FONCTION afficher_menu($menus);
 

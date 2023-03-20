@@ -9,7 +9,7 @@
 @import url("fontawesome621web/css/all.css");
 @import url("style-menus.css");
 @import url("styles-mobiles.css");
-@import url("../ateliers/css/autres-styles.css");
+@import url("style-autres.css");
 
 
 
@@ -20,6 +20,24 @@ body {
   color: var(--color-text);
   scrollbar-width: none;
     
+}
+
+body.userSession,
+.userSession {
+  background-image: linear-gradient(to bottom,
+  #4a443b,
+  #564e33,
+  #5a592c,
+  #586726,
+  #4d7524,
+  #537e22,
+  #598720,
+  #60901c,
+  #839414,
+  #a49617,
+  #c39825,
+  #e19839) !important;
+
 }
 
 a {
@@ -59,7 +77,7 @@ h1, h2, h3, h4, h5, h6 {
 	width: 100%;
 	height: 100%;
 	z-index: 19923 !important;
-	padding: 58px 10px 50px;
+	padding: 58px 20px 50px;
 	overflow-x: hidden;
 	scrollbar-width: none;
 
@@ -73,6 +91,33 @@ h1, h2, h3, h4, h5, h6 {
 	-webkit-overflow-scrolling: touch;
 
 }
+
+.overlays .textOverlays {
+  width: 50% !important;
+  padding: 20px 25px;
+  margin: 20px auto !important;
+  height: 20vh !important;
+  position: relative;
+  top: 60%;
+  text-align: center;
+  text-justify: auto;
+  font-size: 130%;
+  color: #ffffff;
+  font-weight: 700;
+  text-shadow: 0 0 5px rgb(255, 255, 255), 
+            0 0 10px rgb(255, 255, 255), 
+            0 0 15px rgb(255, 255, 255), 
+            0 0 10px rgb(255, 17, 119), 
+            0 0 35px rgb(255, 17, 119), 
+            0 0 20px rgb(255, 17, 119), 
+            0 0 30px rgb(255, 17, 119), 
+            0 0 55px rgb(255, 17, 119);
+  
+  animation: clignotant 2s linear infinite;
+
+}
+
+
 
 
 #header {
@@ -179,6 +224,23 @@ h1, h2, h3, h4, h5, h6 {
   .button-header {
     margin: 0 15px 0 0;
   }
+
+  .overlays {
+    background-size: calc(40%);  
+  }
+  
+  .overlays .textOverlays {
+    width: 100% !important;
+    max-width: fit-content;
+    padding: 10px 10px 20px;
+    height: 20vh !important;
+    max-height: max-content;
+    font-size: 130%;
+    top: 52%;
+    background-color: transparent !important;
+  
+  }
+
 }
 
 
@@ -197,13 +259,14 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
-.back_cover .exercice {
+.back_cover .exercice,
+.exercice {
 
   width: var(--wid-95);
-  background-color: aquamarine;
   padding: 10px 15px;
+  padding-left: 40px;
   margin: -17px auto 0;
-
+  background-color: #abedd3;
   cursor: pointer;
   box-shadow: 0 8px 6px -6px black;
   white-space: nowrap;
@@ -214,27 +277,115 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
+.back_cover .exercice:hover,
+.exercice:hover {
+  text-transform: uppercase !important;
+  font-size: 130%;
+  color: #4a2b83;
+  background: rgba(9, 118, 31, 0.54);
+  text-shadow: 0 0 5px rgb(255, 255, 255), 
+            0 0 10px rgb(255, 255, 255), 
+            0 0 15px rgb(255, 255, 255), 
+            0 0 20px rgb(255, 17, 119), 
+            0 0 35px rgb(255, 17, 119), 
+            0 0 40px rgb(255, 17, 119), 
+            0 0 50px rgb(255, 17, 119), 
+            0 0 75px rgb(255, 17, 119);
+}
+
+.back_cover .exercice::before,
+.exercice::before {
+  content: '';
+  height: 30px;
+  width: 30px;
+  margin-left: -35px;
+  background-color: #0bb006;
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid #1fb01a;
+  cursor: pointer;
+  box-shadow: 0 8px 6px -6px black;
+  animation: clignotant 4s linear infinite;
+
+}
+
+@keyframes clignotant {
+  50% {opacity: 0;}
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  
+  .overlays {
+    background-size: calc(30%);  
+  }
+  
+  .overlays .textOverlays {
+    width: 100% !important;
+    max-width: fit-content;
+    padding: 10px 10px 20px;
+    height: 20vh !important;
+    max-height: max-content;
+    font-size: 130%;
+    top: 60%;
+    background-color: transparent !important;
+  
+  }
+}
+
+
+@media only screen and (max-width : 576px) {
+  .overlays {
+    background-size: calc(40%);  
+  }
+  
+  .overlays .textOverlays {
+    width: 100% !important;
+    max-width: fit-content;
+    padding: 10px 10px 20px;
+    height: 20vh !important;
+    max-height: max-content;
+    font-size: 130%;
+    top: 52%;
+    background-color: transparent !important;
+  
+  }
+
+}
+
+@keyframes animate { 
+  0% { 
+      background-position: 0%; 
+  } 
+  100% { background-position: 400%; } 
+}
+
+
 .back_cover .cover_content {
 
   height: var(--hgt-95);
-  padding: 20px 30px;
+  padding: 0 7px;
   margin: 7px auto 10px;
   color: var(--color-text);
   background-color: rgba(6, 5, 5, 0.3);
   box-shadow: 0 8px 6px -6px black;
 }
 
-.cover_content .lecontenant {
+.cover_content .lecontenant,
+.lecontenant {
 
-  position: relative;
+  /* position: relative; */
   min-height: 300px;
   max-height: var(--c-hg-95);
   overflow: hidden;
-  margin: -18px -28px;
-  padding: 10px 7px;
+  margin: 7px auto;
+  padding: 10px 7px 30px;
+
 }
 
-.cover_content .lecontenant:hover { overflow-y: auto; }
+.cover_content .lecontenant:hover,
+.lecontenant:hover { overflow-y: auto; }
 
 
 
@@ -247,7 +398,7 @@ h1, h2, h3, h4, h5, h6 {
   min-height: 95px;
   max-height: auto;
   background-color: #abedd3;
-  padding: 10px 15px;
+  padding: 10px 15px 30px;
   margin: 10px auto 15px;
   box-shadow: 0 8px 6px -6px black;
   overflow: hidden;
@@ -550,8 +701,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* @file inputs :: file uploaders 
 -------------------------------------------------------- */
-.formulaire .flo-file{ display:block; width:100%; }
-.formulaire .flo-file .file-input{
+.formulaire .flo-file { display:block; width:100%; }
+.formulaire .flo-file .file-input {
 	width:100%;
 	height:100%;
 	cursor:pointer;
@@ -615,6 +766,33 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
+.formulaire .icon-input,
+.formulaire .colm .icon-input,
+.colm .icon-input {
+
+  position: absolute;
+	top: 3px;
+  background: transparent !important;
+  color: #050505;  
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 0 7px;
+  margin-top: auto;
+  margin-right: auto;
+  border: none;
+  cursor: pointer;
+  height: 31px;
+  line-height: 31px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: max-content;
+  opacity: 1;
+  transition: right 2s ease-in-out .5s;
+
+}
+
 .formulaire .flo-input:focus ~ .button-input,
 .formulaire .flo-textarea:focus ~ .button-input,
 .formulaire .flo-select > select:focus ~ .button-input,
@@ -624,10 +802,28 @@ h1, h2, h3, h4, h5, h6 {
   height: 35px;
   line-height: 35px;
   padding: 0 10px;
-  background: #1977cc;
-  opacity: 1;
+  transition: all 1s ease-in;
   /* box-shadow: 0 8px 6px -6px black; */
 }
+
+.formulaire .flo-input:focus ~ .icon-input,
+.formulaire .flo-textarea:focus ~ .icon-input,
+.formulaire .flo-select > select:focus ~ .icon-input,
+.formulaire .flo-selectmulti select:focus ~ .icon-input { 
+  top: 12px;
+  right: 10px;
+  height: 35px;
+  line-height: 35px;
+  padding: 0 10px;
+  background: #1977cc;
+  opacity: 1;
+  transition-property : right;
+  transition-delay : 2s;
+  transition: all 1s ease-in;
+  /* animation: 3s linear 1s infinite running slidein;
+  box-shadow: 0 8px 6px -6px black; 3s linear 1s */
+}
+
 
 .formulaire .flo-input:focus ~ .button-input:hover,
 .formulaire .flo-textarea:focus ~ .button-input:hover,
@@ -1593,26 +1789,89 @@ background:#1abc9c;
 
 .une_section {
 
-  right: 0;
-  left: 0;
-  height: 92vh;
-  padding: 30px 20px;
-  border: 2px dashed maroon;
+  width: calc(100% - 10px);
+  margin: 10px auto 15px;
+  min-height: 50vh;
+  padding: 10px 7px 30px;
+  box-shadow: 0px 0px 22px 0 rgba(25, 42, 70, 0.25);
+  background-color: rgba(171, 237, 211, 0.5);
 
 }
 
-.une_section .un_titre,
-.une_section h1.un_titre,
-.une_section h2.un_titre,
-.une_section h3.un_titre {
+.une_section > h1,
+.une_section > h2,
+.une_section > h3,
+.une_section > h4,
+.une_section > h5,
+.une_section > h6,
+.une_section > .un_titre {
 
-  margin: -28px -20px 10px;
-  padding: 15px 20px;
-  font-size: 32px;
+  margin: -10px -7px 10px;
+  padding: 10px;
+  padding-left: 60px;
+  font-size: 120%;
   font-weight: 700;
   letter-spacing: 4px;
   text-transform: uppercase;
+  background-color: #abedd3;
+  border-bottom: 1px solid gray;
+  box-shadow: 0 8px 6px -6px black;
+  transition: all 0.5ms ease-in-out;
+  cursor: pointer;
+  vertical-align: middle;
 
+}
+
+.une_section > h1:hover,
+.une_section > h2:hover,
+.une_section > h3:hover,
+.une_section > h4:hover,
+.une_section > h5:hover,
+.une_section > h6:hover,
+.une_section > .un_titre:hover {
+  text-transform: uppercase !important;
+  font-size: 130%;
+  color: #950c0c;
+  background: rgba(9, 118, 31, 0.54);
+  text-shadow: 0 0 5px rgb(255, 255, 255), 
+            0 0 10px rgb(255, 255, 255), 
+            0 0 15px rgb(255, 255, 255), 
+            0 0 20px rgb(255, 17, 119), 
+            0 0 35px rgb(255, 17, 119), 
+            0 0 40px rgb(255, 17, 119), 
+            0 0 50px rgb(255, 17, 119), 
+            0 0 75px rgb(255, 17, 119);
+}
+
+.une_section > h1 > i,
+.une_section > h2 > i,
+.une_section > h3 > i,
+.une_section > h4 > i,
+.une_section > h5 > i,
+.une_section > h6 > i,
+.une_section > .un_titre > i {
+
+  position: absolute;
+  display: block;
+  margin-top: 10px;
+  margin-left: -50px;
+  font-size: 30px;
+
+
+}
+
+.une_section > h1 > span,
+.une_section > h2 > span,
+.une_section > h3 > span,
+.une_section > h4 > span,
+.une_section > h5 > span,
+.une_section > h6 > span,
+.une_section > .un_titre > span {
+  max-width: calc(100%);
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  
 }
 
 .une_section .un_contenu {

@@ -24,21 +24,20 @@ const   divNotif    = document.querySelector(".notifi_liste");//Plage de notific
 const   divMsg      = document.querySelector(".notifi_liste .flo-notification p");//Paragraphe d'alerte
 
 
+let regexmail       = /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/;
 
-var regexmail       = /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/;
-
-var nbr_char        = 8; //generation d'un nombre à 8 chiffres
-var y               = Math.random();
-var nb              = y * Math.pow(10, nbr_char);
-var code_passe      = Math.round(nb);
+let nbr_char        = 8; //generation d'un nombre à 8 chiffres
+let y               = Math.random();
+let nb              = y * Math.pow(10, nbr_char);
+let code_passe      = Math.round(nb);
 if (code_passe.length <= 7) { code_passe = code_passe + "1";}
 
 
 
 function verif(chars) {
     // Caractères autorisés
-    var regex = new RegExp("[0-9]", "i");
-    var valid;
+    let regex = new RegExp("[0-9]", "i");
+    let valid;
     for (x = 0; x < chars.value.length; x++) {
         valid = regex.test(chars.value.charAt(x));
         if (valid == false) {
@@ -488,7 +487,11 @@ function shopass(champ, bton) {
     let     elSelect    = document.getElementById(champ);//Champ d'application de la fonction
     const   typa        = elSelect.getAttribute("type");//type du champ d'application
     let     ibtnpass    = document.getElementById(bton);//Bonton d'appel de la fonction
+    
+    ibtnpass.addEventListener("focus", () => {
 
+    });
+    
     alert("Le type de ce champ est : " + typa + " !");
 
     /* if (typa            == "password") {
@@ -518,3 +521,55 @@ function shopass(champ, bton) {
     } */
 
 }
+
+function verif_mySessions(user) {
+
+    const varLoad   = document.querySelector(".overlays");
+    if (!regexmail.test(user)) {
+        varLoad.classList.remove("d-none");
+        setTimeout(() => {
+            redirige("connexion.php");
+        }, 2000);
+    }
+
+    else {
+
+        setTimeout(() => {
+            varLoad.classList.add("d-none");
+        }, 2000);
+    }
+        
+
+    return false;
+
+} // FONCTION DE VERIFICATION DE SESSION ACTIVE 
+
+
+
+/* function deconnecte_me(user) {
+
+    id_user             = document.getElementById(user).value;
+    $.ajax({
+
+        URL             : "deconnexion.php",
+        type            : "POST",
+        data            : "deconnex-manuel=" + id_user,
+
+        success         : (statut) => {
+            
+            if (statut  == "deconnecter") {
+                
+            } else {
+                
+            }
+        },
+
+        error           : (statut) => {
+
+        }
+
+    });
+
+    return false;
+
+} // FONCTION DE DECONNEXION */

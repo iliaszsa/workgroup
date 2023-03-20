@@ -1,40 +1,50 @@
 <?php
 
-    // session_start();
-
-    if (isset($_SESSION['userConnect'])) {
+    if (isset($_GET["log"])) {
         
-        $user_login             = $_SESSION['userConnect'];//Session de l'identifiant utilisateur
-        $user_delai             = $_SESSION['userdelais'];//Session du délai d'activités
-        $securUser              = $_SESSION['securiteOs'];//Session de la sécurité
-
-    } 
-    
-    else {
+        $cryptage       =   "[]";  
+        $cryptlog       =   $_GET["log"];
         
-        $logEmail               = "exemple@gmail.com";
-        $cryptEmail             = str_replace(".", sha1('.'),
-
-                                        str_replace("-", sha1("-"),
-
-                                            str_replace("[]", sha1("[]"),
-
-                                                str_replace("_", sha1("_"),
-
-                                                    str_replace("@", sha1("@"),
-                                                        
-                                                        $logEmail
-                                                    )
-                                                
-                                                )
-                                            
-                                            )
-
+        $thisCrypt      =   explode($cryptage,
+                                str_replace(sha1("&@="), "&@=",
+                                    $cryptlog
+                                )
+                            );
+        
+        $decryptLog     =   explode("&@=", $thisCrypt[0]);        
+        $cryptEmail     =   str_replace(sha1("-"), "-", 
+                                str_replace(sha1("_"), "_",
+                                    str_replace(sha1("."), ".",
+                                        str_replace(sha1("@"), "@",
+                                            $decryptLog[1]
                                         )
-                                    );
+                                    )
+                                )
+                            );
+                            
+        $_SESSION['userConnect']    = $cryptEmail;//Session de l'identifiant utilisateur
+    
+    }// if(Si capture d'une requêtte $_GET["log"]) {}
 
-        $securUser              = $cryptEmail."&@=". md5(uniqid(microtime(), TRUE) );
+    elseif (isset($_GET["annonce"])) {
+        # code...
+
+
+
+
+        
+        $_SESSION['userConnect']    = $cryptEmail;//Session de l'identifiant utilisateur
+        $_SESSION['userId']         = $log_id;//Session de l'identifiant utilisateur
     }
+
+    else {
+
+        $error_captGet      = "Aucune capture Get";
+    }
+
+    
+
+    
     
 
 

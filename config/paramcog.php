@@ -1,6 +1,6 @@
 <?php 
 
-    include_once __DIR__ . "./sessions.php";
+    
     
     $domaine        = "localhost";
     $useRoot        = "root";
@@ -40,7 +40,12 @@
 
 
     
-    // SELECTION DES TABLES DE LA BASE DES DONNEES
+    if (isset($_SESSION['userConnect'])) {
+        $linkCrypt          = md5($_SESSION['userConnect']."&@=".md5(uniqid(microtime(), TRUE) ) );
+    } else {
+        $linkCrypt          = md5($_SESSION['userConnect']."&@=".md5(uniqid(microtime(), TRUE) ) );
+    }
+    
 
     
 

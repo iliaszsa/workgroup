@@ -1,7 +1,7 @@
 <?php 
 
-    include __DIR__ ."./fonctions.php";
-    include __DIR__ ."./les_class.php";
+    include_once("fonctions.php");
+    include_once("les_class.php");
 
     $repMenus       = "ateliers";
     $name_exo       = strtoupper( $nom_fichier );
@@ -26,8 +26,8 @@
 
             $logo           = "logos/reunion.png";
 
-            include __DIR__ . "./tableaux.php";
-            include __DIR__ . "./menus_entete.php";
+            include_once("tableaux.php");
+            include_once("menus_entete.php");
 
         ?>
         <!-- ======= END Header ======= -->
@@ -41,7 +41,7 @@
                 <div class="exercice">Exercice à réaliser : <?php echo $name_exo;?></div>
 
 
-                <div class="lecontenant">
+                <div class="lecontenant pb-30">
                     
                     <form id="consol-card" class="formulaire pb-30 bg-white">
                         <ul class="list-none pl-5">
@@ -99,14 +99,15 @@
 
 
         <!-- START Footer -->
-        <?php include __DIR__ . "./footer.php"; ?>
+        <?php include_once("footer.php"); ?>
         <!-- END Footer -->
 
 
-        <script type="text/javascript" src="./js/jquery-3.6.3.min.js"></script>
-        <script type="text/javascript" src="./js/fonctions.js"></script>
-        <!-- <script type="text/javascript" src="../js/script-main.js"></script> -->
-        <script type="text/javascript" src="./js/scripts.js"></script>
+        <script type="text/javascript" src="js/jquery-3.6.3.min.js"></script>
+        <script type="text/javascript" src="js/fonctions.js"></script>
+        <!-- <script type="text/javascript" src="js/script-main.js"></script> -->
+        <script type="text/javascript" src="js/scripts.js"></script>
+        
         
     </body>
 
