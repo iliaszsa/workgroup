@@ -132,8 +132,7 @@
 
             <section class="une_section">
                 <h3>
-                    <i class="fas fa-edit fa-lg fa-fw mr-7"></i> Informations à venir... 
-                    <i class="fas fa-spinner fa-spin fa-lg fa-fw ml-7"></i>
+                    <i class="fas fa-edit fa-lg fa-fw mr-7"></i> Informations à venir...
                 </h3>
                 <form class="formulaire pb-30 bg-white">
                     

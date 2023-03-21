@@ -1921,7 +1921,9 @@ background:#1abc9c;
 
 
 footer {
-  position: fixed;
+
+  position: static;
+  display: flex;
   right: 0;
   bottom: 0;
   left: 0;
@@ -1930,4 +1932,5 @@ footer {
 
   background-color: #bfd1cd;
   border-top: 3px solid var(--color-bg-br);
+  
 }

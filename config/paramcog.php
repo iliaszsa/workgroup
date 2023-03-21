@@ -43,7 +43,7 @@
     if (isset($_SESSION['userConnect'])) {
         $linkCrypt          = md5($_SESSION['userConnect']."&@=".md5(uniqid(microtime(), TRUE) ) );
     } else {
-        $linkCrypt          = md5($_SESSION['userConnect']."&@=".md5(uniqid(microtime(), TRUE) ) );
+        $linkCrypt          = md5("email.trucs@domain.com&@=".md5(uniqid(microtime(), TRUE) ) );
     }
     
 

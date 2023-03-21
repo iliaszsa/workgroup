@@ -67,9 +67,15 @@
     }, true);
     
 
+
+
+
+
+    // ARRET DE CHARGEMENT DE LA PAGE
+    setTimeout(() => {
+      select(".overlays").classList.add("d-none");
+    }, 3000);
+
     
-
-
-
 })();
 

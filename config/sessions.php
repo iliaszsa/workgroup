@@ -26,16 +26,6 @@
     
     }// if(Si capture d'une requêtte $_GET["log"]) {}
 
-    elseif (isset($_GET["annonce"])) {
-        # code...
-
-
-
-
-        
-        $_SESSION['userConnect']    = $cryptEmail;//Session de l'identifiant utilisateur
-        $_SESSION['userId']         = $log_id;//Session de l'identifiant utilisateur
-    }
 
     else {
 

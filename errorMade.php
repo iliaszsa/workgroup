@@ -5,10 +5,7 @@
         echo'
         <div class="flo-ui mt-7 notifi_liste wid-lg-70 '.$aff_error.'">
             <div class="flo-notification alert-error">
-            <p>
-                Le champ <b class="text-uppercase text-danger">nom</b> 
-                est obligatoir, veuillez le compléter s\'il vous plaît !
-            </p>
+                <p>'.$error_nom.'</p>
                 <a href="javascript:void(0);" class="close-btn">&times;</a>                                  
             </div><!-- end .notification alert-success alert-error section -->
 
