@@ -19,6 +19,28 @@
 
     if (isset($_GET["annonces"])) {
         
+        if (isset($_SESSION["userConnect"])) {
+
+            $userLog            = $_SESSION['userConnect'];//Session de l'identifiant utilisateur
+            $userID             = $_SESSION['userId'];//Session de l'identifiant utilisateur
+
+            // Récupération des annonces déposées par l'utilisateur
+            $focusAnn           = ("SELECT * FROM annonces WHERE userID = :userID ORDER BY date_fin DESC");
+            $fAnn               = $cle_user -> prepare($focusAnn);
+            $fAnn               -> bindValue(':userID', $userID, PDO::PARAM_INT);
+            $fAnn               -> execute();
+
+            $listAnn            = $fAnn -> fetchAll();
+            $nmbrAnn            = $fAnn -> rowCount();
+
+        } 
+        
+        else {
+            
+            $statut_session     = "DECONNEXION";
+        }
+
+
         $onAnnonce          = "";
         $onAjout            = "d-none";
         $onDetails          = "d-none";
@@ -33,8 +55,31 @@
     }
 
     elseif (isset($_GET["details"])) {
+
+        $cryptAnnonce           = explode(sha1('[@]'), $_GET["details"]);
+        $idannonce              = $cryptAnnonce[1];
+
         
+        if (isset($_SESSION["userConnect"])) {
+
+            $userLog            = $_SESSION['userConnect'];//Session de l'identifiant utilisateur
+            $userID             = $_SESSION['userId'];//Session de l'identifiant utilisateur
+
+            // Récupération des annonces déposées par l'utilisateur
+            $getAnn             = ("SELECT * FROM annonces WHERE id = :id");
+            $reqAnn             = $cle_user -> prepare($getAnn);
+            $reqAnn             -> bindValue(':id', $idannonce, PDO::PARAM_INT);
+            $reqAnn             -> execute();
+
+            $dataAnn            = $reqAnn -> fetchAll();
+            $isValide           = $reqAnn -> rowCount();
+
+        } 
         
+        else {
+            
+            $statut_session     = "DECONNEXION";
+        }
 
         $onAnnonce          = "d-none";
         $onAjout            = "d-none";
@@ -42,7 +87,6 @@
     }
     
     else {
-        
         
         $onAnnonce          = "d-none";
         $onAjout            = "d-none";
@@ -78,32 +122,6 @@
             $globGalerie            = glob($imgAnnonce, GLOB_BRACE);
             // Compteur des images et vidéos contenues dans le dossier des annonces
             $nbAnnonce              = count($globGalerie);
-
-            if (isset($_SESSION["userConnect"])) {
-
-                
-                $userLog            = $_SESSION['userConnect'];//Session de l'identifiant utilisateur
-                $userID             = $_SESSION['userId'];//Session de l'identifiant utilisateur
-
-                // Récupération des annonces déposées par l'utilisateur
-                $focusAnn           = ("SELECT * FROM annonces WHERE userID = :userID ORDER BY date_fin DESC");
-                $fAnn               = $cle_user -> prepare($focusAnn);
-                $fAnn               -> bindValue(':userID', $userID, PDO::PARAM_INT);
-                $fAnn               -> execute();
-
-                $listAnn            = $fAnn -> fetchAll();
-                $nmbrAnn            = $fAnn -> rowCount();
-
-            } 
-            
-            else {
-                
-                $statut_session     = "DECONNEXION";
-            }
-            
-                
-
-
 
 
         ?>
@@ -210,6 +228,8 @@
                             $foldAnn            = $foldAnnonce."annonce_".$rang."/";
                             if (!is_dir($foldAnn)) { mkdir($foldAnn);}
 
+                            $linkDetails        = sha1($anc_ref.$anc_statut).sha1("[@]").$anc_id.sha1("[@]").md5(uniqid(microtime(), TRUE) );
+
                             // Récupération des photos et vidéos des annonces disponibles
                             $imgRep             = $foldAnn.'*.{jpg,jpeg,gif,png}';
                             $globImgRep         = glob($imgRep, GLOB_BRACE);//Contient toutes les images disponibles
@@ -265,7 +285,7 @@
                                         }
 
                                         echo'
-                                        <a href="">
+                                        <a href="affaires?details='.$linkDetails.'">
                                             <span class="d-none d-md-inline">Consulter</span>
                                             <i class="fas fa-eye fa-lg ml-7"></i>
                                         </a>
@@ -316,7 +336,7 @@
                                 <select name="categorie" id="categorie">
                                     <option value="CatNulle" selected disabled>Catégorie...</option>
                                     <option value="VOITURES">Voitures</option>
-                                    <option value="CMIONS">Camions</option>
+                                    <option value="CAMIONS">Camions</option>
                                     <option value="MINI PELLE">Mini-pelle</option>
                                     <option value="AUTRES PRODUITS">Autres produits</option>
                                     
@@ -435,18 +455,145 @@
 
 
             <section id="form-detail-annonce" class="une_section <?php echo $onDetails;?>">
-                <h3><i class="fas fa-business-time fa-lg mt-25 mr-7"></i>
-                    <span> Annonce N°00023 </span>
-                    <span class="text-special"><b class="text-danger">10 000 _€</b></span>
-                </h3>
-                <div class="formulaire pb-30 bg-warning">
-                    <div class="annonce mini-hgt"><!--  Début de l\'annonce -->
+                
+                <?php 
+                    // $dataAnn            = $reqAnn -> fetchAll();
+                    // $isValide           = $reqAnn -> rowCount();
+
+                    if ($idannonce         < 10) {
+                        $numAnn         = "0000".$idannonce;
+                    } elseif ($idannonce     <= 99) {
+                        $numAnn         = "000".$idannonce;
+                    } elseif ($idannonce     <= 999) {
+                        $numAnn         = "00".$idannonce;
+                    } elseif ($idannonce     <= 9999) {
+                        $numAnn         = "0".$idannonce;
+                    }
 
 
+                if ($isValide           <= 0) {
+                    
+                    echo'
+                    <h3><i class="fas fa-eye-slash fa-lg mt-25 mr-7"></i>
+                        <span class="text-danger fw-bolder"> Erreur Annonce N°'.$numAnn.' </span>
+                        <span class="text-special"><b class="text-danger">0, 000 _€</b></span>
+                    </h3>
+                    <div class="formulaire pb-30 bg-warning">
+                        <div class="annonce mini-hgt"><!--  Début de l\'annonce -->
 
-                    </div><!-- Fin de l\'annonce -->
-                            
-                </div>
+                            <div class="flo-ui mt-20 wid-100 mr-7 ">
+                                <div class="flo-notification alert-error">
+                                    <p>Désolé mais nous n\'avons pas trouvé votre annonce parmis les disponibilités !</p>
+                                    <p>Veuillez noter que, par un soucis d\'application des mises à jour sur ce dernière, il est possible qu\'elle soit supprimée ou vendue !</p>
+                                    <a href="javascript:void(0);" class="close-btn">&times;</a>                                  
+                                </div><!-- end .notification alert-success alert-error section -->
+
+                            </div>
+
+                        </div><!-- Fin de l\'annonce -->
+                                
+                    </div>
+
+                    <div class="form-row" style="margin-top: 15px;">
+                        <a href="affaires?annonces='.$linkCrypt.'" class="ml-20 text-dark">
+                            <i class="fas fa-folder-tree fa-lg mr-7"></i>Liste des annonces
+                        </a>
+                    </div>
+
+                    ';
+                }
+                
+                else {
+                
+                    foreach ($dataAnn as $idAn => $valAnn) {
+
+                        $noc_id             = $valAnn['id'];//
+                        $noc_ref            = $valAnn['ref'];//
+                        $noc_userID         = $valAnn['userID'];//
+                        $noc_categorie      = $valAnn['categorie'];//
+                        $noc_datEdite       = $valAnn['datEdite'];//
+                        $noc_prix           = $valAnn['prix_depart'];//
+                        $noc_gain           = $valAnn['prix_final'];//
+                        $noc_dateFin        = $valAnn['date_fin'];//
+                        $noc_modele         = $valAnn['modele'];//
+                        $noc_marque         = $valAnn['marque'];//
+                        $noc_puissance      = $valAnn['puissance'];//
+                        $noc_annee          = $valAnn['annee'];//
+                        $noc_message        = $valAnn['message'];//
+                        $noc_statut         = $valAnn['statut'];//
+                        $noc_dateMaj        = $valAnn['dateMaj'];//
+
+                        $foldAnn            = $foldAnnonce."annonce_".$numAnn."/";
+                        if (!is_dir($foldAnn)) {
+                            mkdir($foldAnn);
+                        }
+
+                        $linkDetails        = sha1($noc_ref.$noc_statut).sha1("[@]").$noc_id.sha1("[@]").md5(uniqid(microtime(), true));
+
+                        // Récupération des photos et vidéos des annonces disponibles
+                        $imgRep             = $foldAnn.'*.{jpg,jpeg,gif,png}';
+                        $globImgRep         = glob($imgRep, GLOB_BRACE);//Contient toutes les images disponibles
+                                            // Compteur des images et vidéos contenues dans le dossier des annonces
+                        $countImgRep        = count($globImgRep);//Nombre des images de l'annonces
+                        if ($countImgRep    <= 0) {
+                            copy($foldAnnonce."add-camera.png", $foldAnn."annonce_".$rang.".png");
+                        } else {
+                            foreach ($globImgRep as $idAn => $limageA) {
+                                $imAn        = "mes_images";//Valeur nulle
+                                $imgAnn      = str_replace($imAn, '', $limageA);
+                            }// foreach(Boucle sur les images de l'annonce) {}
+                        }// else {Si, au moins, une image de l'annonce a été ajouté au dossier annonce}
+
+                
+                    echo'
+                    <h3><i class="fas fa-business-time fa-lg mt-25 mr-7"></i>
+                        <span> Annonce N°'.$numAnn.' </span>
+                        <span class="text-special"><b class="text-danger">'.$noc_prix.'_€</b></span>
+                    </h3>
+                    <div class="formulaire pb-30 bg-warning">
+                        <div class="annonce mini-hgt"><!--  Début de l\'annonce -->
+
+                            <ul>
+                                <li class="">
+                                    <div class="indice-line">
+                                        <i class="fas fa-caret-right fa-lg i-indication"></i>
+                                    </div>
+                                    <div class="">                                        
+                                        Un titre pour cette ligne oeoeiiidjfjiis zeojzfozjfjj
+                                        Un titre pour cette ligne oeoeiiidjfjiis zeojzfozjfjj
+                                        Un titre pour cette ligne oeoeiiidjfjiis zeojzfozjfjj
+                                        Un titre pour cette ligne oeoeiiidjfjiis zeojzfozjfjj
+                                        Un titre pour cette ligne oeoeiiidjfjiis zeojzfozjfjj
+                                        Un titre pour cette ligne oeoeiiidjfjiis zeojzfozjfjj
+                                        Un titre pour cette ligne oeoeiiidjfjiis zeojzfozjfjj
+
+                                        <a class=""><i class="fas fa-check fa-lg i-statut"></i> </a>
+
+                                    </div>
+                                </li>
+                                
+
+                            </ul>
+
+
+                        </div><!-- Fin de l\'annonce -->
+                                
+                    </div>
+
+                    <div class="form-row" style="margin-top: 15px;">
+                        <a href="affaires?annonces='.$linkCrypt.'" class="ml-20 text-dark">
+                            <i class="fas fa-folder-tree fa-lg mr-7"></i>Liste des annonces
+                        </a>
+                    </div>
+                    ';
+                
+
+                    }// foreach(Boucle sur les données détails de l'annocne) {}
+
+                }// else {Si l'annonce est toujours disponible}
+                ?>
+
+
             </section>
 
             

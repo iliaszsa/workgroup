@@ -16,6 +16,9 @@
 
 .annonce.mini-hgt {
     min-height: 250px !important;
+    width: calc(100%) !important;
+    background-color: aqua;
+    padding: 7px !important;
 }
 
 .annonce .img_annonce {
@@ -137,4 +140,41 @@
 .action_annonce > a {
     margin-right: 10px;
     margin-left: 7px;
+}
+
+.annonce.mini-hgt > ul {
+    width: calc(100%) !important;
+    margin: -6px -6px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    background-color: #de7e7e;
+    list-style: none;
+}
+
+.mini-hgt > ul li {
+    
+    padding: 7px 10px;
+    padding-left: 40px;
+    margin: 7px 7px 7px -7px;
+    background-color: #a37ede;
+}
+
+.mini-hgt > ul li .indice-line {
+    margin-left: -50px;
+    position: absolute;
+    background-color: #ec0404;
+    align-self: center;
+
+}
+
+/* .mini-hgt > ul li > div {
+    
+} */
+
+.mini-hgt > ul li > div a {
+    text-decoration: none;
+    padding: 7px 10px;
+    margin: 7px 7px 7px -7px;
+    background-color: #22c46b;
 }
